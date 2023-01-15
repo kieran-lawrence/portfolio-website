@@ -1,0 +1,35 @@
+html,body {
+    margin: 0;
+    font-family: 'Karla', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100%;
+    color:#9a9a9a;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+}
+
+.nav {
+    background: #242424;
+    height:80px;
+    z-index: 10;
+}
+.content {
+    background: #121212;
+    flex:1;
+    overflow: auto;
+}
+.footer {
+    background: #242424;
+    height:40px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 1);
+}
