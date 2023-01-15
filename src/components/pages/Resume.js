@@ -1,5 +1,5 @@
 import React from 'react'
-import { ResumeContainer,ResumeLeftPanel,ResumeMiddlePanel,ResumeRightPanel,ResumePic,ResumeHeader,ResumeSubHeader,ResumeContent,ResumeDividingLine,ResumeIcons,ResumeSkills,ResumeLinks, ResumeBG } from '../../utils/styles/Resume.style'
+import { ResumeContainer,ResumeLeftPanel,ResumeMiddlePanel,ResumeRightPanel,ResumePic,ResumeTitle,ResumeSubHeader,ResumeContent,ResumeDividingLine,ResumeIcons,ResumeSkills,ResumeLinks, ResumeBG, ResumeHeader } from '../../utils/styles/Resume.style'
 import { FaEnvelope,FaGithubSquare,FaLinkedin,FaReact,FaJava,FaHtml5,FaCss3Alt,FaArrowAltCircleDown } from 'react-icons/fa';
 import { Tooltip } from '@mui/material'
 import { Link } from 'react-router-dom';
@@ -29,7 +29,7 @@ const Resume = () => {
                     </ResumeLeftPanel>
                     <ResumeMiddlePanel>
                         <ResumePic src='images/smee.png' alt="It's Me!"/>
-                        <ResumeHeader>Kieran Lawrence</ResumeHeader>
+                        <ResumeTitle>Kieran Lawrence</ResumeTitle>
                         <ResumeContent className='education'>
                             <ResumeHeader>Education</ResumeHeader>
                             <ResumeDividingLine />
@@ -60,7 +60,7 @@ const Resume = () => {
                         </ResumeContent>
                     </ResumeMiddlePanel>
                     <ResumeRightPanel>
-                        <ResumeHeader>About Me</ResumeHeader>
+                        <ResumeTitle>About Me</ResumeTitle>
                         <ResumeDividingLine />
                         <ResumeContent className='aboutMe'>
                             In 2011 I enrolled in a Certificate III in Information Technology, once I completed this we were presented 2 options to progress to the next level: Cert IV Networking or Programming. 
@@ -68,7 +68,7 @@ const Resume = () => {
                             Shortly after starting our course the TAFE offered us an expedited, 18-month Diploma of Software Development. During my studies I learnt the fundamentals of programming and applying those skills to develop some very basic applications.
                             The languages taught in my Diploma were Java, Visual Basic, C# .NET and SQL. 
                         </ResumeContent>
-                        <ResumeHeader>Work Experience</ResumeHeader>
+                        <ResumeTitle>Work Experience</ResumeTitle>
                         <ResumeDividingLine />
                         <ResumeContent className='workExperience'>
                             <ResumeSubHeader>

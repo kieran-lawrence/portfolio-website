@@ -26,7 +26,6 @@ export const ResumeContainer = styled.div`
 `;
 export const ResumeLeftPanel = styled.div`
     width:5%;
-    
     background:${COLOR_PRIMARY};
     padding: 2px;
     align-self: center;
@@ -77,12 +76,20 @@ export const ResumeRightPanel = styled.div`
         padding:0;
     }
 `
-export const ResumeHeader = styled.h1`
+export const ResumeTitle = styled.h1`
     font-size:24px;
     font-weight:bold;
     color:${COLOR_TEXT};
     font-family: 'Karla', sans-serif;
     text-align: center;
+`;
+export const ResumeHeader = styled.h1`
+    font-size:20px;
+    font-weight:bold;
+    color:${COLOR_TEXT};
+    font-family: 'Karla', sans-serif;
+    text-align: center;
+    padding-top: 20px;
 `;
 export const ResumeSubHeader = styled.h2`
     color:${COLOR_TEXT};
@@ -126,7 +133,7 @@ export const ResumeContent = styled.span`
         }    
     }
     .skills {
-        margin-top:45px;
+        margin-top:35px;
         display:grid;
         grid-template-columns: 70px 70px;
         grid-row: auto auto;
@@ -134,7 +141,7 @@ export const ResumeContent = styled.span`
         grid-row-gap: 10px;
         justify-content: center;
         @media only screen and (max-width: 960px) {
-            margin-top:25px;
+            margin:25px 0 25px 0;
         }
     }
     .mobileLinks {

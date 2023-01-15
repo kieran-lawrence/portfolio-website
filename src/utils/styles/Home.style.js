@@ -59,6 +59,9 @@ export const HomePageHeading = styled.h1`
     letter-spacing: 2px;
     font-size:48px;
 
+    @media screen and (max-width: 960px) { 
+        font-size:38px;
+    }
 `
 export const HomePageSubHeading = styled.h2`
     font-size:24px;
