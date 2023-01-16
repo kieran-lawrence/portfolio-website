@@ -15,7 +15,7 @@ code {
     display: flex;
     flex-direction: column;
     height: 100vh;
-
+    
 }
 
 .nav {
@@ -26,7 +26,8 @@ code {
 .content {
     background: #121212;
     flex:1;
-    overflow: auto;
+    overflow:auto;
+    width:100%;
 }
 .footer {
     background: #242424;

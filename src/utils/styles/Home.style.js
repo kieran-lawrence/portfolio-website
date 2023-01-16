@@ -5,11 +5,14 @@ export const HomeContainer = styled.div`
     flex-direction: row;
     height:85%;
     background: linear-gradient(180deg, rgba(10,92,107,1) 0%, rgb(4, 46, 53) 100%);
-
+    align-items: center;
+    
     @media screen and (max-width: 960px) { 
         display: flex;
         flex-direction: column; 
-        height:90%       
+        align-items: center;
+        height:85%;
+        
     }
 `
 export const HomePictureArea = styled.div`
@@ -20,7 +23,6 @@ export const HomePictureArea = styled.div`
         justify-content: center;
         align-items: center;
         height: 100%;
-
     }
     .profilePicture {
         max-width: 75%;
@@ -33,8 +35,8 @@ export const HomePictureArea = styled.div`
         
     @media screen and (max-width: 960px) { 
         width:100%;
-        height:40%;
-        padding: 15px 0;
+        height:35%;
+        
     }
 `
 export const HomeBlurbArea = styled.div`
@@ -45,13 +47,11 @@ export const HomeBlurbArea = styled.div`
     align-items:center;
     padding-left: 10px;
     @media screen and (max-width: 960px) { 
-        width:100%;
-        height:40%;
+        width:95%;
     }
 
     .buttonArea {
         display: flex;
-        
     }
 `
 export const HomePageHeading = styled.h1`
@@ -60,13 +60,18 @@ export const HomePageHeading = styled.h1`
     font-size:48px;
 
     @media screen and (max-width: 960px) { 
-        font-size:38px;
+        font-size:32px;
+        width:90%;
     }
 `
 export const HomePageSubHeading = styled.h2`
     font-size:24px;
     font-weight:300;
     margin:20px;
+
+    @media screen and (max-width: 960px) { 
+        font-size:20px;
+    }
 `
 export const ButtonSolid = styled.button`
     background: #242424;
@@ -110,7 +115,7 @@ export const HomeSVGArea = styled.div`
     background: rgb(4, 46, 53);
 
     @media screen and (max-width: 960px) { 
-        height:8%;
+        height:10%;
     }
 `
 export const BackgroundSVG = styled.svg`

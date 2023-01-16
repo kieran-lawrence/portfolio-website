@@ -82,6 +82,10 @@ export const ResumeTitle = styled.h1`
     color:${COLOR_TEXT};
     font-family: 'Karla', sans-serif;
     text-align: center;
+
+    @media only screen and (max-width: 580px) {
+        font-size:20px; 
+    }
 `;
 export const ResumeHeader = styled.h1`
     font-size:20px;
@@ -90,6 +94,11 @@ export const ResumeHeader = styled.h1`
     font-family: 'Karla', sans-serif;
     text-align: center;
     padding-top: 20px;
+
+    @media only screen and (max-width: 960px) {
+        font-size:16px; 
+        padding-top: 5px;
+    }
 `;
 export const ResumeSubHeader = styled.h2`
     color:${COLOR_TEXT};
@@ -115,6 +124,11 @@ export const ResumePic = styled.img`
         padding-top:10px;
         max-width:60%;
         max-height:60%; 
+    }
+    @media only screen and (max-width: 580px) {
+        padding-top:10px;
+        max-width:40%;
+        max-height:40%; 
     }
 
 `
@@ -160,6 +174,7 @@ export const ResumeContent = styled.span`
     }
     @media only screen and (max-width: 960px) { 
         font-size: 13px;
+        
     }
     
 `

@@ -1,4 +1,4 @@
-import styled, { keyframes,css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const NavContainer = styled.div`
@@ -14,12 +14,14 @@ export const NavContainer = styled.div`
         justify-content: center;
         width:50%;
         margin-right: 10px;
+        
         @media screen and (max-width: 960px) {
             justify-content: end;
             padding-right: 10px;
             width:25%;
         }
-
+        
+        
     }
     .navLogo {
         display: flex;
@@ -48,7 +50,6 @@ export const NavMenuList = styled.ul`
     text-align: center;
     font-size: 1.3rem;
     align-items: center;
-
     @media screen and (max-width: 960px) {
         display: flex;
         flex-direction: column;
@@ -56,14 +57,18 @@ export const NavMenuList = styled.ul`
         grid-gap: 5px;
         background: red;
         height: 400px;
-        position: absolute;
+        position: fixed;
+        transform: translateY( ${props => props.clicked ? "0" : "-100%" } );
+        opacity:${props => props.clicked ? "1" : "0" };
+        transition-delay: 2s;
+        transition-property:opacity;
         top: 58px;
+        left:0;
         padding: 0%;
         padding-top:150px;
-        opacity: ${props => props.clicked ? "1" : "0" };
+        
         transition: all 0.5s ease;
-        left: ${props => props.clicked ? "0" : "100%" };
-        background: ${props => props.clicked ? "#242424" : "#121212" };
+        background: ${props => props.clicked ? "#242424" : "none" };
         z-index:-1;
         box-shadow: 0px 20px 10px rgba(0, 0, 0, 0.5);
     }

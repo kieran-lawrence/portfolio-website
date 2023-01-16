@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 export const ContactContainer = styled.section`
     display: flex;
@@ -6,14 +6,11 @@ export const ContactContainer = styled.section`
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 24px;
+    padding: 0 25px;
     color: #9a9a9a;
 
-
-
     @media screen and (max-width: 960px) { 
-        
-        height:80vh;
+        height:81vh;
     }
     
 `
@@ -24,6 +21,9 @@ export const ContactFormContent = styled.div`
     border-radius: 10px;
     width:65%;
     height:70%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     
     @media screen and (max-width: 960px) { 
         width:100%;
@@ -36,6 +36,9 @@ export const ContactFormHeading = styled.p`
 
     @media screen and (max-width: 960px) { 
         margin:0px 0 12px 0;
+        font-size:18px;
+        height:8%;
+        
     }
 `
 export const ContactForm = styled.form`
@@ -44,6 +47,9 @@ export const ContactForm = styled.form`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 960px) { 
+        width:85%;
+    }
 `
 export const ContactLabel = styled.label`
     font-size: 16px;
@@ -72,6 +78,7 @@ export const ContactInput = styled.input`
 `
 export const ContactInputLarge = styled.textarea`
     padding: 8px 20px;
+    font-family: 'Karla', sans-serif;
     border-radius: 5px;
     background-color: #202020;
     color:#9a9a9a;
@@ -90,6 +97,7 @@ export const ContactInputLarge = styled.textarea`
         width:80%;
         min-width:80%;
         resize:none;
+        max-height:200px;
     }
     
 `
@@ -112,5 +120,45 @@ export const SubmitButton = styled.button`
         border: 1px solid #0A5C6B;
         font-weight:400;
         transition: all 0.2s ease-in-out;
+        
     }
+
+    @media screen and (max-width: 960px) { 
+        width: 125px;
+        height: 50px;
+        margin-bottom:25px;
+    }
+`
+const spin = keyframes`
+from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`
+export const FancyButton = styled.button`
+    letter-spacing:1px;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    background-color:transparent;
+    color: #9a9a9a;
+    border: 1px solid #9a9a9a;
+    transition: all 0.25s ease;
+    width: 155px;
+    height: 60px;
+    margin: 10px;
+    animation: ${spin} 2s 0.25s linear infinite ;
+    content:"Send";
+
+    :clicked {
+        width: 60px;
+        height:60px;
+        border-radius: 50%;
+        content:"";
+        border-left-color:#0A5C6B;
+    }
+    
+
 `
