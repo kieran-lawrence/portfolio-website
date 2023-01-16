@@ -39,6 +39,9 @@ const Resume = () => {
                             <ResumeSubHeader>
                             <h3 className='smaller'>Diploma of Software Development</h3>
                             </ResumeSubHeader>
+                            <ResumeSubHeader>
+                            <h3 className='smaller'>AZ-900 Azure Fundamentals</h3>
+                            </ResumeSubHeader>
                         </ResumeContent>
                         <ResumeContent className='skills'>
                             <ResumeHeader>Skills</ResumeHeader>

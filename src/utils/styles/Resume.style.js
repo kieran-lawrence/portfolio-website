@@ -105,11 +105,19 @@ export const ResumeSubHeader = styled.h2`
     font-size: 16px;
     text-align: center;
     font-weight:600;
-    margin-top:30px;
+    margin-top:15px;
+
+    @media only screen and (max-width: 960px) {
+        margin:5px;
+    }
     .smaller {
         font-size:15px;   
         margin-bottom:8px;
         font-weight:400;
+        @media only screen and (max-width: 960px) {
+            margin:0px;
+            font-size: 14px;
+        }
     }
 
     &:first-child {

@@ -76,36 +76,34 @@ export const HomePageSubHeading = styled.h2`
 export const ButtonSolid = styled.button`
     background: #242424;
     color:#9a9a9a;
-    border:none;
-    outline: 2px solid #242424;
+    outline:none;
+    border: 2px solid #242424;
     width:160px;
     height:60px;
     border-radius: 10px;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease;
     font-size:20px;
     margin:10px;
     :hover {
         background: none;
-        outline: 2px solid #9a9a9a;
-        
+        border: 2px solid #9a9a9a;
     }
 `
 export const ButtonOutline = styled.button`
     background: none;
-    border:none;
-    outline: 2px solid #9a9a9a;
+    outline:none;
+    border: 2px solid #9a9a9a;
     color:#9a9a9a;
     width:160px;
     height:60px;
     border-radius: 10px;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease;
     font-size:20px;
     margin:10px;
     :hover {
         background: #242424;
-        outline: 2px solid #242424;
+        border: 2px solid #242424;
         color:#9a9a9a;
-        border:none;
     }
 `
 export const HomeSVGArea = styled.div`

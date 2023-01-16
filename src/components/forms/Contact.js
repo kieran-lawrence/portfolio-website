@@ -10,7 +10,9 @@ const Contact = () => {
 	const handleSubmit = (e) => {
 		 e.preventDefault();
 
-         //alert("Message Sent!");
+         document.getElementById("contactForm").reset();
+         alert("Message Sent!");
+         
         /* emailjs
         .sendForm(
             "service_ernzczn",
@@ -34,16 +36,17 @@ const Contact = () => {
                     Fill out the form below to get in touch with me
                 </ContactFormHeading>
 				<ContactFormContent>
-					<ContactForm ref={form} onSubmit={handleSubmit}>
+					<ContactForm id="contactForm" onSubmit={handleSubmit}>
                         <ContactLabel htmlFor='name'>Name</ContactLabel>
 						<ContactInput id='name' name='from_name' type='text'/>
                         <ContactLabel htmlFor='email' >Email</ContactLabel>
 						<ContactInput id='email' name='from_email' type='email' />
                         <ContactLabel htmlFor='message'>What do you want to say?</ContactLabel>
 						<ContactInputLarge id='message' name='message' type='text' />
-                        <SubmitButton onClick={handleSubmit}></SubmitButton>
+                        <SubmitButton onClick={handleSubmit}>Send</SubmitButton>
 					</ContactForm>
 				</ContactFormContent>
+                <small>This contact form is not fully functional, so no emails are actually sent</small>
 			</ContactContainer>
 		</>
 	)
