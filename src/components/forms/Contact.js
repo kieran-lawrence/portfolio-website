@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-//import emailjs from "@emailjs/browser";
 import { ContactContainer,ContactFormHeading,ContactFormContent,ContactForm,ContactLabel,ContactInput,ContactInputLarge,SubmitButton,FancyButton } from "../../utils/Contact.style";
 
 const Contact = () => {
@@ -9,24 +8,8 @@ const Contact = () => {
 
 	const handleSubmit = (e) => {
 		 e.preventDefault();
-
          document.getElementById("contactForm").reset();
          alert("Message Sent!");
-         
-        /* emailjs
-        .sendForm(
-            "service_ernzczn",
-            "template_0gslky5",
-            form.current
-        )
-        .then(
-            (result) => {
-                alert("Message Sent!");
-            },
-            (error) => {
-                alert(error.text);
-            }
-        ); */
 	}
 
 	return (
