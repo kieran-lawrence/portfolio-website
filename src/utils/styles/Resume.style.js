@@ -86,6 +86,9 @@ export const ResumeTitle = styled.h1`
     @media only screen and (max-width: 580px) {
         font-size:20px; 
     }
+    @media only screen and (min-width: 2000px) {
+        font-size:26px;
+    } 
 `;
 export const ResumeHeader = styled.h1`
     font-size:20px;
@@ -110,6 +113,10 @@ export const ResumeSubHeader = styled.h2`
     @media only screen and (max-width: 960px) {
         margin:5px;
     }
+    @media only screen and (min-width: 2000px) {
+        margin-top:25px;
+        font-size:18px;
+    } 
     .smaller {
         font-size:15px;   
         margin-bottom:8px;
@@ -118,6 +125,9 @@ export const ResumeSubHeader = styled.h2`
             margin:0px;
             font-size: 14px;
         }
+        @media only screen and (min-width: 2000px) {
+            font-size:18px;
+        } 
     }
 
     &:first-child {
@@ -149,7 +159,11 @@ export const ResumeContent = styled.span`
     text-justify: distribute;
     color:${COLOR_TEXT};
 
+    @media only screen and (min-width: 2000px) {
+        font-size:17px;
+    }  
     .workExperienceDetails {
+
         @media only screen and (max-width: 960px) {
             display:none;
         }    
