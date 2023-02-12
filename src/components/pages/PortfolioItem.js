@@ -1,5 +1,5 @@
 import React from 'react'
-import { PortfolioItemDesc, PortfolioItemListItem, PortfolioItemOverview, PortfolioItemPic, PortfolioItemTitle, PortfolioLink } from '../../utils/styles/Portfolio.style'
+import { PortfolioItemDesc, PortfolioItemListItem, PortfolioItemOverview, PortfolioItemPic, PortfolioItemPublished, PortfolioItemTitle, PortfolioItemTitleContainer, PortfolioLink } from '../../utils/styles/Portfolio.style'
 
 function PortfolioItem(props) {
   return (
@@ -7,7 +7,10 @@ function PortfolioItem(props) {
         <PortfolioLink href={props.href} aria-label={props.ariaLabel}>
             <PortfolioItemPic alt='Project cover photo' src={props.src} />
             <PortfolioItemOverview>
-                <PortfolioItemTitle>{props.text}</PortfolioItemTitle>
+                <PortfolioItemTitleContainer>
+                    <PortfolioItemTitle>{props.text}</PortfolioItemTitle>
+                    <PortfolioItemPublished>{props.published}</PortfolioItemPublished>
+                </PortfolioItemTitleContainer>
                 <PortfolioItemDesc>{props.desc}</PortfolioItemDesc>
             </PortfolioItemOverview>
         </PortfolioLink>
