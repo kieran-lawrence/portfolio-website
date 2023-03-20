@@ -7,6 +7,7 @@ import Home from './components/Home'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer';
 import './index.css';
+import PortfolioOverview from './components/pages/PortfolioOverview';
 
 const App = () => {
     return (
@@ -17,7 +18,8 @@ const App = () => {
             <div className='content'>
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/portfolio" element={<Portfolio />} />
+                    <Route path="/portfolio" element={<Portfolio />}/>
+                    <Route path="/portfolio/:id" element={<PortfolioOverview />} />
                     <Route path="/resume" element={<Resume />} />
                     <Route path="/contact" element={<Contact />} />
                 </Routes>

@@ -1,0 +1,43 @@
+const PortfolioHistory = [
+    {
+        id:1,
+        imgSrc:"../images/medialibrary.png",
+        title:"Book Collection Reviewer",
+        description:"This is a tool to keep track of your book collection. I came up with the idea to stop myself buying books I already have at home. Data is stored in MongoDB and is fetched from the Google Books API. This project was written in Angular which was very different from React, but also extremely fun.",
+        published:"Feb 2023",
+        gitHubLink:"https://github.com/nfctargus/book-collection-reviewer",
+        ariaLabel:"Book Collection Reviewer",
+        tags:["Angular","TypeScript","MongoDB","Axios","Express"],
+    },
+    {
+        id:2,
+        imgSrc:"../images/thiswebsite.png",
+        title:"This website",
+        description:"I built this website from the ground up and it was a great way to learn the fundamentals of React and how it works with in sync with HTML & CSS. I am by no means a UI designer but I had a great time planning it out in Figma and then figuring out how to make it work in the real world whilst also being dynamic.",
+        published:"Jan 2023",
+        gitHubLink:"https://github.com/nfctargus/my-website-v2",
+        ariaLabel:"This Website",
+        tags:["JavaScript","React","Styled Components","React Router"],
+    },
+    {
+        id:3,
+        imgSrc:"../images/shard.png",
+        title:"Improved Obsidian",
+        description:"Improved Obsidian is a personal project in late 2022 after an extended break from programming. It was a great refresher on Object Oriented Programming as well as reminding me of why I love to code. I will be expanding this mod over time as well as updating to match the current version of Minecraft.",
+        published:"Dec 2022",
+        gitHubLink:"https://github.com/nfctargus/improved-obsidian-1.19",
+        ariaLabel:"GitHub Project Repo",
+        tags:["Java","Fabric"],
+    },
+    {
+        id:4,
+        imgSrc:"../images/404.png",
+        title:"Chat App (WIP)",
+        description:"In order to develop my skills and work on something more challening I decided to make my own instant messaging/chat application. I plan to implement features such as private/group messaging, presence and friend management. I will also be using WebSockets which is a first for me. This project should be completed by Mid-2023.",
+        published:"TBD",
+        gitHubLink:"https://github.com/nfctargus/",
+        ariaLabel:"GitHub Project Repo",
+        tags:["TypeScript","Redux","Socket.io","NestJS","Bcrypt","Passport"],
+    },
+]
+export default PortfolioHistory

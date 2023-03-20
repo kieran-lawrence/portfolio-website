@@ -16,7 +16,7 @@ const Home = () => {
                     Hi, <br />
                     My name is Kieran
                 </HomePageHeading>
-                <HomePageSubHeading>I have a passion for coding, and I am looking for a Junior Developer role</HomePageSubHeading>
+                <HomePageSubHeading>I am an aspiring Junior Developer looking for the my role</HomePageSubHeading>
                 <div className='buttonArea'>
                     <Link to='/portfolio'><ButtonSolid large className='buttons'>Portfolio</ButtonSolid></Link>
                     <Link to='/contact'><ButtonOutline large className='buttons'>Contact</ButtonOutline></Link>

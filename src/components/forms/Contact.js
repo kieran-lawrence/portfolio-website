@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { ContactContainer,ContactFormHeading,ContactFormContent,ContactForm,ContactLabel,ContactInput,ContactInputLarge,SubmitButton,FancyButton } from "../../utils/Contact.style";
+import { ContactContainer,ContactFormHeading,ContactFormContent,ContactForm,ContactLabel,ContactInput,ContactInputLarge,SubmitButton,FancyButton } from "../../utils/styles/Contact.style";
 
 const Contact = () => {
     const form = useRef();

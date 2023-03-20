@@ -199,5 +199,4 @@ export const ContactButton = styled.button`
         padding: 10px;
         border-radius:10px;
     }
-    
 `
