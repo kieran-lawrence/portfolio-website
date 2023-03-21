@@ -8,6 +8,7 @@ const PortfolioHistory = [
         gitHubLink:"https://github.com/nfctargus/book-collection-reviewer",
         ariaLabel:"Book Collection Reviewer",
         tags:["Angular","TypeScript","MongoDB","Axios","Express"],
+        sandBoxLink:"https://codesandbox.io/embed/github/nfctargus/book-collection-reviewer/main?workspaceId=fb947686-163d-49dd-9087-021b40115fca"
     },
     {
         id:2,
@@ -18,6 +19,7 @@ const PortfolioHistory = [
         gitHubLink:"https://github.com/nfctargus/my-website-v2",
         ariaLabel:"This Website",
         tags:["JavaScript","React","Styled Components","React Router"],
+        sandBoxLink:"",
     },
     {
         id:3,
@@ -28,6 +30,7 @@ const PortfolioHistory = [
         gitHubLink:"https://github.com/nfctargus/improved-obsidian-1.19",
         ariaLabel:"GitHub Project Repo",
         tags:["Java","Fabric"],
+        sandBoxLink:"",
     },
     {
         id:4,
@@ -38,6 +41,7 @@ const PortfolioHistory = [
         gitHubLink:"https://github.com/nfctargus/",
         ariaLabel:"GitHub Project Repo",
         tags:["TypeScript","Redux","Socket.io","NestJS","Bcrypt","Passport"],
+        sandBoxLink:"",
     },
 ]
 export default PortfolioHistory

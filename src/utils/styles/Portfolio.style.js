@@ -95,6 +95,25 @@ export const PFPicturePanel = styled.div`
         object-fit: cover;
     }
 `
+export const SandboxWrap = styled.div`
+    width:95%;
+    height:70%;
+    border-bottom:1px solid #242424;
+    
+    header {
+        background-color: #242424;
+        font-size:1rem;
+        text-align: center;
+        height:4%;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+    }
+    iframe {
+        width:100%;
+        height:96%;
+        border:none;
+    }
+`
 export const PFContentPanel = styled.div`
     width:40%;
     display: flex;
@@ -161,6 +180,7 @@ export const DetailsContainer = styled.div`
         flex-direction: column;
         justify-content: space-between;
     }
+
 `
 /* --- [End] PortfolioOverview.js  --- */
 
