@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 /* --- PortfolioItem.js --- */
 export const PortfolioItemListItem = styled.li`
-    width: 24%;
+    width: 19%;
     background:#242424;
     padding:0px;
     border-radius: 10px;

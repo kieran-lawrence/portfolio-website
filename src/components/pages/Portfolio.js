@@ -9,7 +9,7 @@ const Portfolio = () => {
             <PortfolioItemList>
                 {pfItems.map(function(item){
                     return <PortfolioItem key={item.id} id={item.id} src={item.imgSrc} text={item.title} desc={item.description} published={item.published} ariaLabel={item.ariaLabel} />
-                })}   
+                }).reverse()}   
             </PortfolioItemList>
         </PortfolioContainer>
     )

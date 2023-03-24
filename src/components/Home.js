@@ -16,13 +16,12 @@ const Home = () => {
                     Hi, <br />
                     My name is Kieran
                 </HomePageHeading>
-                <HomePageSubHeading>I am an aspiring Junior Developer looking for the my role</HomePageSubHeading>
+                <HomePageSubHeading>I am a Junior Developer looking for my next role</HomePageSubHeading>
                 <div className='buttonArea'>
                     <Link to='/portfolio'><ButtonSolid large className='buttons'>Portfolio</ButtonSolid></Link>
                     <Link to='/contact'><ButtonOutline large className='buttons'>Contact</ButtonOutline></Link>
                 </div>
             </HomeBlurbArea>
-            
         </HomeContainer>
         <HomeSVGArea>
             <BackgroundSVG xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
