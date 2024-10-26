@@ -2,6 +2,10 @@
 	import { writable, type Writable } from 'svelte/store';
 	import Hamburger from '../components/Hamburger.svelte';
 	import { fly } from 'svelte/transition';
+	import Hero from '../components/hero/Hero.svelte';
+	import Portfolio from '../components/portfolio/Portfolio.svelte';
+	import Skills from '../components/skills/Skills.svelte';
+	import Resume from '../components/resume/Resume.svelte';
 
 	const showMenu: Writable<boolean> = writable(false);
 	const handleMenuClick = (state: boolean) => {
@@ -29,10 +33,10 @@
 			</ul>
 		{/if}
 	</nav>
-	<!-- Hero -->
-	<!-- Portfolio -->
-	<!-- Skills -->
-	<!-- Resume -->
+	<Hero />
+	<Portfolio />
+	<Skills />
+	<Resume />
 </main>
 
 <style>
@@ -53,6 +57,7 @@
 		padding: 1rem 1rem;
 		display: flex;
 		align-items: center;
+		width: fit-content;
 		z-index: 100;
 	}
 	ul {
