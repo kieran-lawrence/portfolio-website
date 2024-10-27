@@ -18,12 +18,6 @@
 	export let data: PageData;
 </script>
 
-<svelte:head>
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" />
-	<link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet" />
-</svelte:head>
-
 <main>
 	<nav>
 		<Hamburger isOpen={$showMenu} on:click={() => handleMenuClick(!$showMenu)} />
