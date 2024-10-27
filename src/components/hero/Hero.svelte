@@ -15,13 +15,16 @@
 </div>
 
 <style>
+	:global(html) {
+		scroll-behavior: smooth;
+	}
 	#hero {
 		display: grid;
 		grid-template-rows: auto auto 2fr;
 		gap: 1rem;
 		align-items: center;
 		justify-content: center;
-		height: 90vh;
+		height: 95vh;
 	}
 	h1,
 	h2 {

@@ -7,6 +7,7 @@
 </script>
 
 <div id="portfolio">
+	<h2>Portfolio</h2>
 	<ul class="portfolioCards">
 		{#if $loading.isLoading}
 			<div>Loading...</div>
@@ -34,7 +35,14 @@
 		justify-content: center;
 		align-items: center;
 		height: 100vh;
-		border: 1px solid red;
+	}
+	h2 {
+		font-size: 5rem;
+		letter-spacing: 3px;
+		text-shadow: 0 0 17px #4b45af;
+		font-family: 'Jersey 10', sans-serif;
+		padding: 0 0 1rem 0;
+		margin: 0;
 	}
 	.portfolioCards {
 		max-width: 70vw;

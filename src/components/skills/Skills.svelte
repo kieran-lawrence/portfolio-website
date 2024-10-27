@@ -7,6 +7,7 @@
 </script>
 
 <div id="skills" style={`--text-colour: ${$activeTheme.pallette.textColour};`}>
+	<h2>Skills</h2>
 	<ul>
 		<li>
 			<SkillsItem
@@ -59,8 +60,14 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		height: 100vh;
-		border: 1px solid red;
+	}
+	h2 {
+		font-size: 5rem;
+		letter-spacing: 3px;
+		text-shadow: 0 0 17px #4b45af;
+		font-family: 'Jersey 10', sans-serif;
+		padding: 0 0 1rem 0;
+		margin: 0;
 	}
 	ul {
 		max-width: 70vw;
