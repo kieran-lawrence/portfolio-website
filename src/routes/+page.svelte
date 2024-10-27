@@ -13,6 +13,17 @@
 	};
 </script>
 
+<script lang="ts">
+	import { type PageData } from '../routes/$types';
+	export let data: PageData;
+</script>
+
+<svelte:head>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
+	<link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet" />
+</svelte:head>
+
 <main>
 	<nav>
 		<Hamburger isOpen={$showMenu} on:click={() => handleMenuClick(!$showMenu)} />
@@ -34,7 +45,7 @@
 		{/if}
 	</nav>
 	<Hero />
-	<Portfolio />
+	<Portfolio portfolioData={data} />
 	<Skills />
 	<Resume />
 </main>
@@ -48,7 +59,8 @@
 		display: flex;
 		flex-direction: column;
 		min-height: 400vh;
-		background-color: #111;
+		background: url('../lib/assets/background-dark.jpg') no-repeat fixed 50%;
+		background-size: cover;
 	}
 	nav {
 		position: sticky;
