@@ -14,30 +14,34 @@
 </script>
 
 <script lang="ts">
+	import ThemeIcon from '../components/ThemeIcon.svelte';
 	import { type PageData } from '../routes/$types';
 	export let data: PageData;
 </script>
 
 <main>
-	<nav>
-		<Hamburger isOpen={$showMenu} on:click={() => handleMenuClick(!$showMenu)} />
-		{#if $showMenu}
-			<ul>
-				<li transition:fly={{ y: -25 }}>
-					<a href="#" on:click={() => handleMenuClick(false)}>Home</a>
-				</li>
-				<li transition:fly={{ delay: 100, y: -25 }}>
-					<a href="#portfolio" on:click={() => handleMenuClick(false)}>Portfolio</a>
-				</li>
-				<li transition:fly={{ delay: 200, y: -25 }}>
-					<a href="#skills" on:click={() => handleMenuClick(false)}>Skills</a>
-				</li>
-				<li transition:fly={{ delay: 300, y: -25 }}>
-					<a href="#resume" on:click={() => handleMenuClick(false)}>Resume</a>
-				</li>
-			</ul>
-		{/if}
-	</nav>
+	<div>
+		<nav>
+			<Hamburger isOpen={$showMenu} on:click={() => handleMenuClick(!$showMenu)} />
+			{#if $showMenu}
+				<ul>
+					<li transition:fly={{ y: -25 }}>
+						<a href="#" on:click={() => handleMenuClick(false)}>Home</a>
+					</li>
+					<li transition:fly={{ delay: 100, y: -25 }}>
+						<a href="#portfolio" on:click={() => handleMenuClick(false)}>Portfolio</a>
+					</li>
+					<li transition:fly={{ delay: 200, y: -25 }}>
+						<a href="#skills" on:click={() => handleMenuClick(false)}>Skills</a>
+					</li>
+					<li transition:fly={{ delay: 300, y: -25 }}>
+						<a href="#resume" on:click={() => handleMenuClick(false)}>Resume</a>
+					</li>
+				</ul>
+			{/if}
+		</nav>
+		<ThemeIcon />
+	</div>
 	<Hero />
 	<Portfolio portfolioData={data} />
 	<Skills />
