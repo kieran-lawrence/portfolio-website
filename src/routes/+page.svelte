@@ -25,6 +25,22 @@
 	import { activeTheme } from '$lib';
 </script>
 
+<svelte:head>
+	<meta property="og:title" content="Code By Kieran | Developer Portfolio Website" />
+	<meta property="og:type" content="website" />
+	<meta
+		property="og:image"
+		content={dev
+			? 'http://localhost:3001/social-icon.png'
+			: 'https://codebykieran.com/social-icon.png'}
+	/>
+	<meta property="og:url" content="https://codebykieran.com" />
+	<meta
+		property="og:description"
+		content="Developer portfolio for Kieran Lawrence | Perth WA | Software Developer"
+	/>
+</svelte:head>
+
 <main
 	style={`--text-colour: ${$activeTheme.pallette.textColour};--background-colour:${$activeTheme.pallette.backgroundColour};--text-hover-colour:${$activeTheme.isDark ? $activeTheme.pallette.backgroundColourAlt : $activeTheme.pallette.cloudsOneColour};`}
 >
