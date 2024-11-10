@@ -109,7 +109,7 @@
 		display: flex;
 		list-style: none;
 		gap: 1.5rem;
-		font-size: 1.2rem;
+		font-size: 1.5rem;
 		margin: 0;
 	}
 	li a {

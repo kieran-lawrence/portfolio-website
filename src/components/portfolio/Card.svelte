@@ -162,7 +162,7 @@
 	.description {
 		font-size: 1.2rem;
 		color: var(--card-text-colour);
-		overflow-y: scroll;
+		overflow: auto;
 		word-break: keep-all;
 		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	}
