@@ -5,7 +5,8 @@
 		cardDescription = 'Description',
 		cardTitleColor = '#f1f1f1',
 		cardDescriptionColor = '#f1f1f1',
-		cardLink
+		cardLink,
+		skills
 	}: {
 		cardTitle: string;
 		cardBGImage: string;
@@ -13,6 +14,7 @@
 		cardTitleColor: string;
 		cardDescriptionColor: string;
 		cardLink: string;
+		skills: string[];
 	} = $props();
 
 	let formattedTitle = cardTitle.replaceAll('-', ' ');
@@ -22,10 +24,14 @@
 	class="cardContainer"
 	style={`--card-title-colour: ${cardTitleColor};--card-description-colour: ${cardDescriptionColor}`}
 >
-	<a class="card" href={cardLink} target="_blank">
+	<a
+		class={formattedTitle.includes('bulletin') ? 'card horizontal' : 'card'}
+		href={cardLink}
+		target="_blank"
+	>
 		<div class="imageContainer">
 			{#if cardBGImage}
-				<img src={cardBGImage} alt={formattedTitle} class="image" />
+				<img src={cardBGImage} alt={formattedTitle} class="image" loading="lazy" />
 			{/if}
 		</div>
 		<div class="textContainer">
@@ -33,6 +39,13 @@
 			<p class="description">
 				{cardDescription}
 			</p>
+			<div class="skillsContainer">
+				<ul>
+					{#each skills as skill}
+						<li>{skill}</li>
+					{/each}
+				</ul>
+			</div>
 		</div>
 	</a>
 </li>
@@ -45,12 +58,44 @@
 	.cardContainer {
 		display: flex;
 		justify-content: stretch;
+		backdrop-filter: blur(8px);
+		border-radius: 1rem;
+	}
+	.cardContainer:hover {
+		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+		animation: animate-box-shadow 2s infinite;
+	}
+	.cardContainer:nth-of-type(1) {
+		/* Bulletin */
+		grid-row: 2;
+		grid-column: 1 / span 4;
+	}
+	.cardContainer:nth-of-type(2) {
+		/* Improved Obsidian */
+		grid-row: 1;
+		grid-column: 1 / span 3;
+	}
+	.cardContainer:nth-of-type(3) {
+		/** KlipIt */
+		grid-row: 1;
+		grid-column: 4;
+	}
+	.cardContainer:nth-of-type(4) {
+		/** KanBan App */
+		grid-column: 1;
+		grid-row: 3;
+	}
+	.cardContainer:nth-of-type(5) {
+		/** Quill */
+		grid-column: 2 / span 3;
+		grid-row: 3;
 	}
 	.imageContainer {
 		width: 100%;
 		height: 60%;
 		overflow: hidden;
 		border-bottom: 2px solid var(--card-title-colour);
+		border-radius: 0.75rem;
 	}
 	.image {
 		height: 100%;
@@ -59,12 +104,31 @@
 	}
 	.textContainer {
 		display: flex;
+		text-align: justify;
 		flex-direction: column;
 		height: 40%;
 		align-items: center;
 		justify-content: center;
 		gap: 1rem;
 		padding: 0 1rem;
+	}
+	.skillsContainer {
+		width: 100%;
+	}
+	.skillsContainer ul {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		padding: 0;
+	}
+	.skillsContainer li {
+		background: #16003454;
+		color: #f1f1f1;
+		padding: 0.4rem 0.6rem;
+		list-style: none;
+		border-radius: 1rem;
+		font-size: 0.9rem;
 	}
 	.card {
 		display: flex;
@@ -76,11 +140,20 @@
 		text-decoration: none;
 		border: 2px solid var(--card-title-colour);
 		padding-bottom: 1rem;
+		border-radius: 1rem;
 	}
-	.card:hover .image {
-		transition: transform 0.3s;
-		cursor: pointer;
-		transform: scale(105%);
+	.horizontal {
+		flex-direction: row;
+		padding: 0;
+	}
+	.horizontal .imageContainer {
+		height: 100%;
+	}
+	.horizontal .textContainer {
+		padding: 0;
+		width: 60%;
+		height: 100%;
+		padding-right: 1rem;
 	}
 	.title {
 		text-transform: capitalize;
@@ -92,5 +165,33 @@
 		color: var(--card-description-colour);
 		overflow-y: scroll;
 		word-break: keep-all;
+	}
+	@keyframes gradient-animation {
+		0% {
+			background-position: 15% 0%;
+		}
+		50% {
+			background-position: 85% 100%;
+		}
+		100% {
+			background-position: 15% 0%;
+		}
+	}
+	@keyframes animate-box-shadow {
+		0% {
+			box-shadow: 0 0 2px 3px #5e27b1;
+		}
+		25% {
+			box-shadow: 0 0 2px 3px #3e3be0;
+		}
+		50% {
+			box-shadow: 0 0 2px 3px #8e64ce;
+		}
+		75% {
+			box-shadow: 0 0 2px 3px #a545c2;
+		}
+		100% {
+			box-shadow: 0 0 2px 3px #5b14c7;
+		}
 	}
 </style>

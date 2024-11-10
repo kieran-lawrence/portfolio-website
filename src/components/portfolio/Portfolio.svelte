@@ -21,6 +21,7 @@
 						cardTitle={repo.name}
 						cardTitleColor="#f1f1f1"
 						cardDescriptionColor="#f1f1f1"
+						skills={repo.topics}
 					/>
 				{/if}
 			{/each}
@@ -34,7 +35,7 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		height: 100vh;
+		background: #6d84c8;
 	}
 	h2 {
 		font-size: 5rem;
@@ -45,13 +46,17 @@
 		margin: 0;
 	}
 	.portfolioCards {
-		max-width: 70vw;
+		width: 60vw;
+		max-width: 85rem;
 		display: grid;
-		padding: 2rem 5rem 0 5rem;
+		padding: 0;
+		padding-top: 2rem;
 		gap: 2rem;
 		list-style: none;
 		justify-content: 'center';
 		transition: 'gap 0.25s';
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: 1fr 50px 50px 1fr;
+		grid-template-rows: minmax(150px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr);
+		margin: 0;
 	}
 </style>
