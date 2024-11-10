@@ -239,12 +239,22 @@
 	@media only screen and (max-width: 680px) {
 		.subHeader {
 			font-size: 3.5rem;
-			padding: 1rem 0 0.5rem;
 		}
 		.resumeContainer {
 			width: 90vw;
 			display: flex;
 			flex-direction: column;
+			gap: 1rem;
+		}
+	}
+	/* Tablet Styling */
+	@media (min-width: 681px) and (max-width: 1024px) {
+		.subHeader {
+			font-size: 3.8rem;
+		}
+		.resumeContainer {
+			width: 90vw;
+			display: grid;
 			gap: 1rem;
 		}
 	}

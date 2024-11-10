@@ -88,13 +88,4 @@
 	li a:hover {
 		color: var(--text-hover);
 	}
-	/* Mobile Styling */
-	@media only screen and (max-width: 680px) {
-		.resumeContainer {
-			width: 90vw;
-			display: flex;
-			flex-direction: column;
-			gap: 1rem;
-		}
-	}
 </style>

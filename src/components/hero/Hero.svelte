@@ -107,4 +107,15 @@
 			justify-self: center;
 		}
 	}
+	/* Tablet Styling */
+	@media (min-width: 681px) and (max-width: 1024px) {
+		#hero h1 {
+			font-size: 5rem;
+		}
+		#hero h2 {
+			font-size: 1.8rem;
+			width: 40vw;
+			justify-self: center;
+		}
+	}
 </style>

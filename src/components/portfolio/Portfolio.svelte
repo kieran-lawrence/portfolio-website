@@ -69,4 +69,15 @@
 			gap: 1rem;
 		}
 	}
+	/* Tablet Styling */
+	@media (min-width: 681px) and (max-width: 1024px) {
+		h2 {
+			font-size: 3.8rem;
+		}
+		.portfolioCards {
+			width: 90vw;
+			display: grid;
+			gap: 1rem;
+		}
+	}
 </style>
