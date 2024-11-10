@@ -4,7 +4,6 @@
 	import { fly } from 'svelte/transition';
 	import Hero from '../components/hero/Hero.svelte';
 	import Portfolio from '../components/portfolio/Portfolio.svelte';
-	import Skills from '../components/skills/Skills.svelte';
 	import Resume from '../components/resume/Resume.svelte';
 
 	const showMenu: Writable<boolean> = writable(false);
@@ -14,13 +13,14 @@
 </script>
 
 <script lang="ts">
+	import Footer from '../components/Footer.svelte';
 	import ThemeIcon from '../components/ThemeIcon.svelte';
 	import { type PageData } from '../routes/$types';
 	export let data: PageData;
 </script>
 
-<main>
-	<div>
+<main style={`--color-sky-from: #26254F;--color-sky-to:#646CB4`}>
+	<div class="stickyHeader">
 		<nav>
 			<Hamburger isOpen={$showMenu} on:click={() => handleMenuClick(!$showMenu)} />
 			{#if $showMenu}
@@ -29,13 +29,10 @@
 						<a href="#" on:click={() => handleMenuClick(false)}>Home</a>
 					</li>
 					<li transition:fly={{ delay: 100, y: -25 }}>
-						<a href="#portfolio" on:click={() => handleMenuClick(false)}>Portfolio</a>
+						<a href="#resume" on:click={() => handleMenuClick(false)}>Resume</a>
 					</li>
 					<li transition:fly={{ delay: 200, y: -25 }}>
-						<a href="#skills" on:click={() => handleMenuClick(false)}>Skills</a>
-					</li>
-					<li transition:fly={{ delay: 300, y: -25 }}>
-						<a href="#resume" on:click={() => handleMenuClick(false)}>Resume</a>
+						<a href="#portfolio" on:click={() => handleMenuClick(false)}>Portfolio</a>
 					</li>
 				</ul>
 			{/if}
@@ -43,12 +40,15 @@
 		<ThemeIcon />
 	</div>
 	<Hero />
-	<Portfolio portfolioData={data} />
-	<Skills />
 	<Resume />
+	<Portfolio portfolioData={data} />
+	<Footer />
 </main>
 
 <style>
+	html {
+		scroll-behavior: smooth;
+	}
 	* {
 		margin: 0;
 		color: #f1f1f1;
@@ -56,15 +56,17 @@
 	main {
 		display: flex;
 		flex-direction: column;
-		min-height: 400vh;
-		background: url('../lib/assets/background-dark.jpg') no-repeat fixed 50%;
-		background-size: cover;
+		min-height: 310vh;
+		background: #6d84c8;
 	}
-	nav {
+	.stickyHeader {
 		position: sticky;
 		top: 0;
 		left: 0;
 		padding: 1rem 1rem;
+		z-index: 99;
+	}
+	nav {
 		display: flex;
 		align-items: center;
 		width: fit-content;

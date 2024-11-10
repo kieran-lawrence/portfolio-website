@@ -1,10 +1,12 @@
 <script>
 	import { writable } from 'svelte/store';
+	import BackgroundTop from '../BackgroundTop.svelte';
 
 	const randomValue = writable(Math.random() * 10);
 </script>
 
-<div id="hero">
+<div id="hero" style={`--color-sky-from: #26254F;--color-sky-to:#646CB4`}>
+	<BackgroundTop />
 	<h1 style={`--random-x: ${$randomValue}px; --random-y: ${$randomValue * 1.5}px;`}>
 		Hi, I'm Kieran.
 	</h1>
@@ -24,7 +26,8 @@
 		gap: 1rem;
 		align-items: center;
 		justify-content: center;
-		height: 95vh;
+		height: 65vh;
+		background: #6d84c8;
 	}
 	h1,
 	h2 {
