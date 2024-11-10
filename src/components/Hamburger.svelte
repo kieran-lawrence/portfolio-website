@@ -48,6 +48,7 @@
 	}
 	.navMenu:hover .bar {
 		background: var(--bar-hover-colour);
+		transition: all 0.2s;
 	}
 	.top {
 		top: 25%;

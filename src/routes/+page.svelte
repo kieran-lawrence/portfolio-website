@@ -17,12 +17,21 @@
 	import ThemeIcon from '../components/ThemeIcon.svelte';
 	import { type PageData } from '../routes/$types';
 	export let data: PageData;
+	import { activeTheme } from '$lib';
 </script>
 
-<main style={`--color-sky-from: #26254F;--color-sky-to:#646CB4`}>
+<main
+	style={`--text-colour: ${$activeTheme.pallette.textColour};--background-colour:${$activeTheme.pallette.backgroundColour};--text-hover-colour:${$activeTheme.isDark ? $activeTheme.pallette.backgroundColourAlt : $activeTheme.pallette.cloudsOneColour};`}
+>
 	<div class="stickyHeader">
 		<nav>
-			<Hamburger isOpen={$showMenu} on:click={() => handleMenuClick(!$showMenu)} />
+			<Hamburger
+				isOpen={$showMenu}
+				on:click={() => handleMenuClick(!$showMenu)}
+				backgroundColour={$activeTheme.pallette.textColour}
+				barColour={$activeTheme.pallette.backgroundGradientFrom}
+				barHoverColour={$activeTheme.pallette.backgroundGradientTo}
+			/>
 			{#if $showMenu}
 				<ul>
 					<li transition:fly={{ y: -25 }}>
@@ -51,14 +60,14 @@
 	}
 	* {
 		margin: 0;
-		color: #f1f1f1;
+		color: var(--text-colour);
 	}
 	main {
 		display: flex;
 		flex-direction: column;
 		gap: 5rem;
 		min-height: 310vh;
-		background: #6d84c8;
+		background: var(--background-colour);
 	}
 	.stickyHeader {
 		position: sticky;
@@ -72,6 +81,7 @@
 		align-items: center;
 		width: fit-content;
 		z-index: 100;
+		font-family: 'Andale Mono', monospace;
 	}
 	ul {
 		height: 100%;
@@ -86,6 +96,6 @@
 		color: var(--text-colour);
 	}
 	li a:hover {
-		color: var(--text-hover);
+		color: var(--text-hover-colour);
 	}
 </style>

@@ -1,8 +1,12 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { activeTheme } from '$lib';
 </script>
 
-<main class="errorPage">
+<main
+	class="errorPage"
+	style={`--text-colour: ${$activeTheme.pallette.textColour};--background-colour:${$activeTheme.pallette.backgroundColour}`}
+>
 	<h1>Ruh Roh!</h1>
 	<h2>Right now you're probably wondering, how did I end up here?</h2>
 	<div class="errorDetails">
@@ -17,6 +21,7 @@
 	* {
 		margin: 0;
 		font-family: 'Andale Mono', monospace;
+		color: var(--text-colour);
 	}
 	.errorPage {
 		display: flex;
@@ -25,8 +30,7 @@
 		flex-direction: column;
 		height: 100vh;
 		gap: 3rem;
-		background: url('../lib/assets/background-dark.jpg') no-repeat fixed 50%;
-		background-size: cover;
+		background: var(--background-colour);
 	}
 	h1 {
 		padding: 1rem 0;
@@ -47,16 +51,18 @@
 		font-weight: 600;
 	}
 	.backButton {
-		/* border: 1px solid var(--text-colour); */
-		padding: 0.5rem 1rem;
+		padding: 1rem 2rem;
 		background: none;
 		font-size: 1.3rem;
 		margin-bottom: 5rem;
+		border-radius: 1rem;
+		border: none;
+		outline: 1px solid var(--text-colour);
 	}
 	.backButton:hover {
-		/* background: var(--hover-colour); */
 		cursor: pointer;
-		transition: background 0.2s;
+		outline-offset: 10px;
+		transition: all 0.1s;
 	}
 	.backButton a {
 		text-decoration: none;

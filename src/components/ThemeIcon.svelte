@@ -47,7 +47,7 @@
 		width="30px"
 		xmlns="http://www.w3.org/2000/svg"
 		viewBox="0 0 24 24"
-		style={`--moon-icon-fill: ${$activeTheme.isDark ? 'blue' : 'transparent'}; --sun-icon-fill: ${$activeTheme.isDark ? 'transparent' : 'yellow'};`}
+		style={`--moon-icon-fill: ${$activeTheme.isDark ? $activeTheme.pallette.textColour : 'transparent'}; --sun-icon-fill: ${$activeTheme.isDark ? 'transparent' : $activeTheme.pallette.textColour};`}
 	>
 		<title>Theme Toggle Icon</title>
 		<path

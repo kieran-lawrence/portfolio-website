@@ -1,17 +1,18 @@
 <script>
 	import { activeTheme } from '$lib';
+	import Cloud from '../Cloud.svelte';
 	import IconAwsLambda from '../icons/IconAWSLambda.svelte';
 	import IconEmail from '../icons/IconEmail.svelte';
 	import IconGithub from '../icons/IconGithub.svelte';
 	import IconLinkedIn from '../icons/IconLinkedIn.svelte';
 	import IconReact from '../icons/IconReact.svelte';
-	import IconTypescript from '../icons/IconTypescript.svelte';
 	import SkillsItem from '../skills/SkillsItem.svelte';
 	import Card from './Card.svelte';
 </script>
 
-<div id="resume">
+<div id="resume" style={`--hover-colour:${$activeTheme.pallette.cloudsOneColour}`}>
 	<div class="imageWrapper">
+		<Cloud />
 		<enhanced:img
 			class="image"
 			src="$lib/assets/Smee.jpg"
@@ -148,14 +149,11 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		background: #6d84c8;
 	}
 	.imageWrapper {
 		display: flex;
-		background-image: url('../../lib/assets/cloud.svg');
-		background-size: 100%;
-		background-repeat: no-repeat;
 		padding: 10rem;
+		position: relative;
 	}
 	.image {
 		border-radius: 50%;
@@ -163,12 +161,13 @@
 		width: 15rem;
 		height: auto;
 		padding: 1rem;
-		filter: sepia(75%) grayscale(50%);
+		filter: grayscale(40%);
 	}
 	.linkWrapper {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		z-index: 2;
 	}
 	.links {
 		list-style: none;

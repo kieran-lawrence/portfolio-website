@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { activeTheme } from '$lib';
 	import { loading } from '$lib';
 	import Card from './Card.svelte';
 
@@ -19,8 +20,8 @@
 						cardLink={repo.html_url}
 						cardDescription={repo.description}
 						cardTitle={repo.name}
-						cardTitleColor="#f1f1f1"
-						cardDescriptionColor="#f1f1f1"
+						cardTextColour={$activeTheme.pallette.textColour}
+						cardPillColour={$activeTheme.pallette.backgroundColourAlt}
 						skills={repo.topics}
 					/>
 				{/if}
@@ -35,7 +36,6 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		background: #6d84c8;
 	}
 	h2 {
 		font-size: 5rem;

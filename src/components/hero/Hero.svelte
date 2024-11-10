@@ -5,7 +5,7 @@
 	const randomValue = writable(Math.random() * 10);
 </script>
 
-<div id="hero" style={`--color-sky-from: #26254F;--color-sky-to:#646CB4`}>
+<div id="hero">
 	<BackgroundTop />
 	<h1 style={`--random-x: ${$randomValue}px; --random-y: ${$randomValue * 1.5}px;`}>
 		Hi, I'm Kieran.
@@ -21,13 +21,12 @@
 		scroll-behavior: smooth;
 	}
 	#hero {
-		display: grid;
-		grid-template-rows: auto auto 2fr;
+		display: flex;
+		flex-direction: column;
 		gap: 1rem;
 		align-items: center;
-		justify-content: center;
-		height: 65vh;
-		background: #6d84c8;
+		justify-content: flex-start;
+		height: 50vh;
 	}
 	h1,
 	h2 {

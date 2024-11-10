@@ -3,16 +3,16 @@
 		cardTitle = 'Title',
 		cardBGImage,
 		cardDescription = 'Description',
-		cardTitleColor = '#f1f1f1',
-		cardDescriptionColor = '#f1f1f1',
+		cardTextColour,
+		cardPillColour,
 		cardLink,
 		skills
 	}: {
 		cardTitle: string;
 		cardBGImage: string;
 		cardDescription: string;
-		cardTitleColor: string;
-		cardDescriptionColor: string;
+		cardTextColour: string;
+		cardPillColour: string;
 		cardLink: string;
 		skills: string[];
 	} = $props();
@@ -22,7 +22,7 @@
 
 <li
 	class="cardContainer"
-	style={`--card-title-colour: ${cardTitleColor};--card-description-colour: ${cardDescriptionColor}`}
+	style={`--card-text-colour: ${cardTextColour};--card-info-bg-colour:${cardPillColour};`}
 >
 	<a
 		class={formattedTitle.includes('bulletin') ? 'card horizontal' : 'card'}
@@ -94,7 +94,7 @@
 		width: 100%;
 		height: 60%;
 		overflow: hidden;
-		border-bottom: 2px solid var(--card-title-colour);
+		border-bottom: 2px solid var(--card-text-colour);
 		border-radius: 0.75rem;
 	}
 	.image {
@@ -123,8 +123,8 @@
 		padding: 0;
 	}
 	.skillsContainer li {
-		background: #16003454;
-		color: #f1f1f1;
+		background: var(--card-info-bg-colour);
+		color: var(--card-text-colour);
 		padding: 0.4rem 0.6rem;
 		list-style: none;
 		border-radius: 1rem;
@@ -139,7 +139,7 @@
 		gap: 1rem;
 		width: 100%;
 		text-decoration: none;
-		border: 2px solid var(--card-title-colour);
+		border: 2px solid var(--card-text-colour);
 		padding-bottom: 1rem;
 		border-radius: 1rem;
 	}
@@ -159,11 +159,11 @@
 	.title {
 		text-transform: capitalize;
 		font-size: 2.2rem;
-		color: var(--card-title-colour);
+		color: var(--card-text-colour);
 	}
 	.description {
 		font-size: 1.2rem;
-		color: var(--card-description-colour);
+		color: var(--card-text-colour);
 		overflow-y: scroll;
 		word-break: keep-all;
 		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
