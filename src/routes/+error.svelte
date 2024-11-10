@@ -36,7 +36,7 @@
 		padding: 1rem 0;
 		font-size: 6rem;
 		letter-spacing: 3px;
-		font-family: 'Jersey 10', sans-serif;
+		font-family: 'Coiny', system-ui;
 	}
 	.errorDetails {
 		display: flex;

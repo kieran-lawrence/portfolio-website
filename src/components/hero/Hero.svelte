@@ -36,7 +36,7 @@
 		margin: 0;
 		padding: 0;
 		text-align: center;
-		font-family: 'Jersey 10', sans-serif;
+		font-family: 'Coiny', system-ui;
 	}
 	#hero h1 {
 		font-size: 6rem;
@@ -46,11 +46,10 @@
 		transform-origin: center;
 	}
 	#hero h2 {
-		font-size: 2rem;
-		font-weight: 500;
+		font-size: 1.8rem;
+		font-weight: 400;
 		letter-spacing: 1.5px;
-		width: 35vw;
-
+		width: 45vw;
 		animation: appear 1s ease-in forwards;
 	}
 
@@ -104,7 +103,7 @@
 			font-size: 4rem;
 		}
 		#hero h2 {
-			font-size: 1.7rem;
+			font-size: 1.5rem;
 			width: 60vw;
 			justify-self: center;
 		}
@@ -115,7 +114,7 @@
 			font-size: 5rem;
 		}
 		#hero h2 {
-			font-size: 1.8rem;
+			font-size: 2rem;
 			width: 40vw;
 			justify-self: center;
 		}

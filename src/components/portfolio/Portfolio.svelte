@@ -40,7 +40,7 @@
 		font-size: 5rem;
 		letter-spacing: 3px;
 		text-shadow: 3px 3px 2px var(--text-shadow-colour);
-		font-family: 'Jersey 10', sans-serif;
+		font-family: 'Coiny', system-ui;
 		margin: 0;
 	}
 	.portfolioCards {
