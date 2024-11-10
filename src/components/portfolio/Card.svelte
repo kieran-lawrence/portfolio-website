@@ -1,7 +1,6 @@
 <script lang="ts">
 	let {
 		cardTitle = 'Title',
-		cardBGImage,
 		cardDescription = 'Description',
 		cardTextColour,
 		cardPillColour,
@@ -9,7 +8,6 @@
 		skills
 	}: {
 		cardTitle: string;
-		cardBGImage: string;
 		cardDescription: string;
 		cardTextColour: string;
 		cardPillColour: string;
@@ -30,9 +28,9 @@
 		target="_blank"
 	>
 		<div class="imageContainer">
-			{#if cardBGImage}
-				<img src={cardBGImage} alt={formattedTitle} class="image" loading="lazy" />
-			{/if}
+			{#await import(`$lib/assets/portfolio/${cardTitle}.png`) then { default: src }}
+				<img {src} alt={formattedTitle} class="image" loading="lazy" />
+			{/await}
 		</div>
 		<div class="textContainer">
 			<h2 class="title">{formattedTitle}</h2>

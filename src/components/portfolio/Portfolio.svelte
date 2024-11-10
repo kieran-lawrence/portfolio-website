@@ -16,7 +16,6 @@
 			{#each portfolioData.repositories as repo}
 				{#if !ignoreList.includes(repo.name)}
 					<Card
-						cardBGImage={`/src/lib/assets/portfolio/${repo.name}.png`}
 						cardLink={repo.html_url}
 						cardDescription={repo.description}
 						cardTitle={repo.name}
