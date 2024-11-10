@@ -4,7 +4,7 @@
 	import Card from './Card.svelte';
 
 	export let portfolioData;
-	const ignoreList = ['github-readme-stats', 'kieran-lawrence'];
+	const ignoreList = ['github-readme-stats', 'kieran-lawrence', 'portfolio-website'];
 </script>
 
 <div id="portfolio">
