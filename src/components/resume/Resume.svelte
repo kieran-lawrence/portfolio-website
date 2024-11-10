@@ -69,8 +69,9 @@
 					>, which now has over <b class="cardTextBold">5 million</b> monthly page views
 				</li>
 				<li>
-					<b class="cardTextBold">Revamped our tech stack</b>, initially developed in
-					2015, using a contemporary framework
+					Conducted technical research and exploratory investigations <b
+						class="cardTextBold">(spikes)</b
+					> to assess new technologies and approaches
 				</li>
 			</ul>
 		</Card>
@@ -222,7 +223,7 @@
 		letter-spacing: normal;
 		text-transform: lowercase;
 		font-weight: 400;
-		font-family: 'Andale Mono', monospace;
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 		margin: 0;
 		padding-left: 1rem;
 	}

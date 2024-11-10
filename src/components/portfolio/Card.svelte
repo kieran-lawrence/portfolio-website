@@ -166,6 +166,7 @@
 		color: var(--card-description-colour);
 		overflow-y: scroll;
 		word-break: keep-all;
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	}
 	@keyframes gradient-animation {
 		0% {
