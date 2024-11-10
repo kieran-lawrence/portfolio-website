@@ -42,7 +42,6 @@
 		letter-spacing: 3px;
 		text-shadow: 0 0 17px #4b45af;
 		font-family: 'Jersey 10', sans-serif;
-		padding: 0 0 1rem 0;
 		margin: 0;
 	}
 	.portfolioCards {
@@ -50,7 +49,6 @@
 		max-width: 85rem;
 		display: grid;
 		padding: 0;
-		padding-top: 2rem;
 		gap: 2rem;
 		list-style: none;
 		justify-content: 'center';
@@ -58,5 +56,17 @@
 		grid-template-columns: 1fr 50px 50px 1fr;
 		grid-template-rows: minmax(150px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr);
 		margin: 0;
+	}
+	/* Mobile Styling */
+	@media only screen and (max-width: 680px) {
+		h2 {
+			font-size: 3.5rem;
+		}
+		.portfolioCards {
+			width: 90vw;
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+		}
 	}
 </style>

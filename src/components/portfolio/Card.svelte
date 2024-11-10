@@ -42,7 +42,7 @@
 			<div class="skillsContainer">
 				<ul>
 					{#each skills as skill}
-						<li>{skill}</li>
+						<li>{skill.replaceAll('-', ' ')}</li>
 					{/each}
 				</ul>
 			</div>
@@ -129,6 +129,7 @@
 		list-style: none;
 		border-radius: 1rem;
 		font-size: 0.9rem;
+		text-transform: capitalize;
 	}
 	.card {
 		display: flex;
@@ -192,6 +193,38 @@
 		}
 		100% {
 			box-shadow: 0 0 2px 3px #5b14c7;
+		}
+	}
+
+	/* Mobile Styling */
+	@media only screen and (max-width: 680px) {
+		.title {
+			font-size: 1.6rem;
+		}
+		.card {
+			gap: 0.5rem;
+		}
+		.textContainer {
+			gap: 0.5rem;
+		}
+
+		.skillsContainer {
+			display: none;
+		}
+		.description {
+			font-size: 1rem;
+		}
+		.horizontal {
+			flex-direction: column;
+		}
+		.horizontal .imageContainer {
+			height: 50%;
+		}
+		.horizontal .textContainer {
+			padding: 0.5rem;
+			box-sizing: border-box;
+			width: 100%;
+			height: 50%;
 		}
 	}
 </style>

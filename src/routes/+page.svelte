@@ -56,6 +56,7 @@
 	main {
 		display: flex;
 		flex-direction: column;
+		gap: 5rem;
 		min-height: 310vh;
 		background: #6d84c8;
 	}
@@ -86,5 +87,14 @@
 	}
 	li a:hover {
 		color: var(--text-hover);
+	}
+	/* Mobile Styling */
+	@media only screen and (max-width: 680px) {
+		.resumeContainer {
+			width: 90vw;
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+		}
 	}
 </style>

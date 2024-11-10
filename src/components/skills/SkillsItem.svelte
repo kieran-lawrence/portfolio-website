@@ -33,12 +33,25 @@
 </div>
 
 <style>
+	* {
+		font-family: 'Andale Mono', monospace;
+	}
 	.skillsHeaderContainer {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
 		gap: 1rem;
+		width: 100%;
+		height: 100%;
+		border: 2px solid var(--colour-text);
+		border-radius: 1rem;
+		padding: 1rem;
+		box-sizing: border-box;
+		grid-column: 1 / span 2;
+	}
+	.skillsHeaderContainer:last-of-type(1) {
+		background: blue;
 	}
 	.header {
 		display: flex;
@@ -49,10 +62,9 @@
 	}
 	h2 {
 		width: max-content;
-		background-color: var(--colour-feature);
 		color: var(--colour-text);
 		margin: 0;
-		padding: 0.4rem 0.8rem;
+		border-radius: 1rem;
 	}
 	.items {
 		display: flex;
@@ -62,9 +74,17 @@
 	}
 	.items p {
 		background-color: var(--colour-feature);
+		border-radius: 1rem;
 		padding: 0.4rem 0.8rem;
 		color: var(--colour-text);
 		width: max-content;
 		margin: 0;
+	}
+	/* Mobile Styling */
+	@media only screen and (max-width: 680px) {
+		.skillsHeaderContainer {
+			grid-column: 1;
+			grid-row: auto;
+		}
 	}
 </style>

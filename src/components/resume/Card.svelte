@@ -6,8 +6,6 @@
 		jobCompany: string;
 		jobDates: string;
 		cardTitleColour: string;
-		backgroundColour: string;
-		shadowColour: string;
 		children: Snippet;
 	}
 	const {
@@ -15,16 +13,11 @@
 		jobCompany = 'Company',
 		jobDates = 'Aug 2024 - Present',
 		cardTitleColour = '#f1f1f1',
-		backgroundColour = '#333',
-		shadowColour = 'crimson',
 		children
 	}: CardProps = $props();
 </script>
 
-<div
-	class="cardContainer"
-	style={`--card-title-colour: ${cardTitleColour};--bg-colour:${backgroundColour};--shadow-colour:${shadowColour}`}
->
+<div class="cardContainer" style={`--card-title-colour: ${cardTitleColour};`}>
 	<div class="card">
 		<h3 class="jobTitle">{jobTitle}</h3>
 		<div class="companyDateWrapper">
@@ -41,15 +34,28 @@
 		font-family: 'Andale Mono', monospace;
 		margin: 0;
 	}
-	h3,
-	h4 {
-		padding: 0 2rem;
-	}
+
 	/* Desktop Styling */
 	.cardContainer {
 		width: 100%;
 		height: 100%;
 		border: 2px solid var(--card-title-colour);
+		border-radius: 1rem;
+		grid-row: 2;
+		padding: 1rem;
+		box-sizing: border-box;
+	}
+	.cardContainer:nth-of-type(1) {
+		grid-column: 1 / span 4;
+		grid-row: 1;
+	}
+	.cardContainer:nth-of-type(2) {
+		grid-column: 3 / span 2;
+		grid-row: 2;
+	}
+	.cardContainer:nth-of-type(3) {
+		grid-column: 3 / span 2;
+		grid-row: 3;
 	}
 	.card {
 		display: flex;
@@ -61,13 +67,14 @@
 	.jobTitle {
 		font-size: 1.4rem;
 		color: var(--card-title-colour);
-		padding: 1rem 0 0.2rem 0;
 		font-weight: 800;
 	}
 	.companyDateWrapper {
 		display: flex;
-		justify-content: space-around;
+		justify-content: center;
+		flex-wrap: wrap;
 		gap: 0.5rem;
+		padding-bottom: 1rem;
 	}
 	.companyDateWrapper h4 {
 		padding: 0;
@@ -94,6 +101,10 @@
 		}
 		.companyDateWrapper h4 {
 			font-size: 1rem;
+		}
+		.cardContainer {
+			grid-column: 1;
+			grid-row: 1;
 		}
 	}
 	/* Tablet Styling */

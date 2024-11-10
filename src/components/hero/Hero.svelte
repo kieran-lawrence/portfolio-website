@@ -96,4 +96,15 @@
 			opacity: 1;
 		}
 	}
+	/* Mobile Styling */
+	@media only screen and (max-width: 680px) {
+		#hero h1 {
+			font-size: 4rem;
+		}
+		#hero h2 {
+			font-size: 1.7rem;
+			width: 60vw;
+			justify-self: center;
+		}
+	}
 </style>

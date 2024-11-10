@@ -1,10 +1,12 @@
 <script>
 	import { activeTheme } from '$lib';
+	import IconAwsLambda from '../icons/IconAWSLambda.svelte';
 	import IconEmail from '../icons/IconEmail.svelte';
-
 	import IconGithub from '../icons/IconGithub.svelte';
 	import IconLinkedIn from '../icons/IconLinkedIn.svelte';
-	import Skills from '../skills/Skills.svelte';
+	import IconReact from '../icons/IconReact.svelte';
+	import IconTypescript from '../icons/IconTypescript.svelte';
+	import SkillsItem from '../skills/SkillsItem.svelte';
 	import Card from './Card.svelte';
 </script>
 
@@ -43,7 +45,6 @@
 			</ul>
 		</div>
 	</div>
-	<Skills />
 	<h2 class="subHeader">Work History</h2>
 	<div class="resumeContainer">
 		<Card
@@ -51,8 +52,6 @@
 			jobCompany="Seven West Media"
 			jobDates="Oct 2023 - Present"
 			cardTitleColour={$activeTheme.pallette.textColour}
-			shadowColour={'#CCC'}
-			backgroundColour={$activeTheme.pallette.backgroundColour}
 		>
 			<ul class="cardTextRegular">
 				<li>
@@ -80,8 +79,6 @@
 			jobCompany="Kinetic IT"
 			jobDates="Jun 2022 - Oct 2023"
 			cardTitleColour={$activeTheme.pallette.textColour}
-			shadowColour={'#CCC'}
-			backgroundColour={$activeTheme.pallette.backgroundColour}
 		>
 			<ul class="cardTextRegular">
 				<li>
@@ -104,8 +101,6 @@
 			jobCompany="Kinetic IT"
 			jobDates="Feb 2020 - Jun 2022"
 			cardTitleColour={$activeTheme.pallette.textColour}
-			shadowColour={'#CCC'}
-			backgroundColour={$activeTheme.pallette.backgroundColour}
 		>
 			<ul class="cardTextRegular">
 				<li>
@@ -127,49 +122,22 @@
 				</li>
 			</ul>
 		</Card>
-	</div>
-	<h2 class="subHeader">Education</h2>
-	<div class="educationContainer">
-		<Card
-			jobTitle="Diploma of Software Development"
-			jobCompany="South Metro TAFE"
-			jobDates="July 2026"
-			cardTitleColour={$activeTheme.pallette.textColour}
-			shadowColour={'#CCC'}
-			backgroundColour={$activeTheme.pallette.backgroundColour}
+		<SkillsItem
+			headerText="Tools"
+			colourFeature={$activeTheme.pallette.awsIconColour}
+			colourText={$activeTheme.pallette.textColour}
+			skillItems={['PostgreSQL', 'Jest', 'TypeORM', 'AWS Lambda', 'GitHub CI/CD', 'Pulumi']}
 		>
-			<ul class="cardTextRegular">
-				<li>
-					Built upon my existing knowledge of programming languages including <b
-						class="cardTextBold">Java, C# and Python</b
-					>
-				</li>
-				<li>
-					Gained expertise in designing and developing <b class="cardTextBold"
-						>SQL and NoSQL databases</b
-					>
-				</li>
-			</ul>
-		</Card>
-		<Card
-			jobTitle="Microsoft Azure Fundamentals"
-			jobCompany="Microsoft"
-			jobDates="May 2022"
-			cardTitleColour={$activeTheme.pallette.textColour}
-			shadowColour={'#CCC'}
-			backgroundColour={$activeTheme.pallette.backgroundColour}
+			<IconAwsLambda />
+		</SkillsItem>
+		<SkillsItem
+			headerText="Frameworks"
+			colourFeature={$activeTheme.pallette.reactIconColour}
+			colourText={$activeTheme.pallette.textColour}
+			skillItems={['React', 'Svelte', 'NextJS', 'React Native', 'NestJS']}
 		>
-			<ul class="cardTextRegular">
-				<li>
-					gained a familiarity with <b class="cardTextBold">Azure services</b> and how they
-					fit into the broader cloud ecosystem
-				</li>
-				<li>
-					learned to distinguish between <b class="cardTextBold">IaaS, PaaS, and SaaS</b>,
-					and understand how each addresses different business needs and scenarios
-				</li>
-			</ul>
-		</Card>
+			<IconReact />
+		</SkillsItem>
 	</div>
 </div>
 
@@ -179,10 +147,14 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		height: 100vh;
+		background: #6d84c8;
 	}
 	.imageWrapper {
 		display: flex;
+		background-image: url('../../lib/assets/cloud.svg');
+		background-size: 100%;
+		background-repeat: no-repeat;
+		padding: 10rem;
 	}
 	.image {
 		border-radius: 50%;
@@ -190,7 +162,7 @@
 		width: 15rem;
 		height: auto;
 		padding: 1rem;
-		filter: grayscale(50%);
+		filter: sepia(75%) grayscale(50%);
 	}
 	.linkWrapper {
 		display: flex;
@@ -226,37 +198,23 @@
 		letter-spacing: 3px;
 		text-shadow: 0 0 17px #4b45af;
 		font-family: 'Jersey 10', sans-serif;
-		padding: 0 0 1.5rem 0;
 		margin: 0;
-	}
-	.subHeader:last-of-type {
-		padding: 1rem 0 1rem 0;
-	}
-	.educationContainer {
-		padding: 0 5rem 2rem 5rem;
-		max-width: 70vw;
-		display: grid;
-		gap: 2rem;
-		list-style: none;
-		justify-content: 'center';
-		transition: 'gap 0.25s';
-		grid-template-columns: 1fr 1fr;
+		padding: 1rem 0 0.5rem;
 	}
 	.resumeContainer {
-		padding: 0 5rem;
-		max-width: 70vw;
+		width: 60vw;
+		max-width: 85rem;
 		display: grid;
 		gap: 2rem;
 		list-style: none;
-		justify-content: 'center';
+		place-items: 'center';
 		transition: 'gap 0.25s';
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
 	.cardTextRegular {
 		display: flex;
 		justify-content: space-evenly;
 		flex: 1;
-		padding: 1rem 2rem;
 		flex-direction: column;
 		text-align: left;
 		font-size: 1.1rem;
@@ -264,16 +222,30 @@
 		letter-spacing: normal;
 		text-transform: lowercase;
 		font-weight: 400;
-		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		font-family: 'Andale Mono', monospace;
+		margin: 0;
+		padding-left: 1rem;
 	}
-	.cardTextRegular li {
-		padding: 0.1rem 0;
-	}
+
 	.cardTextCapitalized {
 		text-transform: capitalize;
 	}
 	.cardTextBold {
 		letter-spacing: normal;
 		font-weight: 800;
+	}
+
+	/* Mobile Styling */
+	@media only screen and (max-width: 680px) {
+		.subHeader {
+			font-size: 3.5rem;
+			padding: 1rem 0 0.5rem;
+		}
+		.resumeContainer {
+			width: 90vw;
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+		}
 	}
 </style>
