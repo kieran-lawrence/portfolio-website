@@ -7,7 +7,7 @@
 	const ignoreList = ['github-readme-stats', 'kieran-lawrence', 'portfolio-website'];
 </script>
 
-<div id="portfolio">
+<div id="portfolio" style={`--text-shadow-colour:${$activeTheme.pallette.textShadowColour}`}>
 	<h2>Portfolio</h2>
 	<ul class="portfolioCards">
 		{#if $loading.isLoading}
@@ -39,7 +39,7 @@
 	h2 {
 		font-size: 5rem;
 		letter-spacing: 3px;
-		text-shadow: 0 0 17px #4b45af;
+		text-shadow: 3px 3px 2px var(--text-shadow-colour);
 		font-family: 'Jersey 10', sans-serif;
 		margin: 0;
 	}

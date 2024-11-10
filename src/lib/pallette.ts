@@ -1,5 +1,6 @@
 type ColourTypes = {
 	textColour: string;
+	textShadowColour: string;
 	backgroundColour: string;
 	backgroundColourAlt: string;
 	backgroundGradientFrom: string;
@@ -29,12 +30,13 @@ type Themes = {
 
 const theme: Themes = {
 	dark: {
-		textColour: '#F1F1F1',
-		backgroundColour: '#6D84C8',
+		textColour: '#F5F5F5',
+		textShadowColour: '#302C7D',
+		backgroundColour: '#465EA4',
 		backgroundColourAlt: '#16003454',
 		backgroundGradientFrom: '#26254F',
 		backgroundGradientTo: '#646CB4',
-		cloudsOneColour: '#6D84C8',
+		cloudsOneColour: '#465EA4',
 		cloudsTwoColour: '#7B94D4',
 		cloudsThreeColour: '#9EB6E6',
 		grassOneColour: '#36477C',
@@ -43,9 +45,10 @@ const theme: Themes = {
 		...sharedColors
 	},
 	light: {
-		textColour: '#F1F1F1',
+		textColour: '#001442',
+		textShadowColour: '#CCC9FD',
 		backgroundColour: '#6BA6E6',
-		backgroundColourAlt: '#16003454',
+		backgroundColourAlt: '#90BBE9',
 		backgroundGradientFrom: '#458CD8',
 		backgroundGradientTo: '#9AADFF',
 		cloudsOneColour: '#6BA6E6',

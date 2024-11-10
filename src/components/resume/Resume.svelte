@@ -10,7 +10,10 @@
 	import Card from './Card.svelte';
 </script>
 
-<div id="resume" style={`--hover-colour:${$activeTheme.pallette.cloudsOneColour}`}>
+<div
+	id="resume"
+	style={`--hover-colour:${$activeTheme.pallette.cloudsOneColour};--text-shadow-colour:${$activeTheme.pallette.textShadowColour}`}
+>
 	<div class="imageWrapper">
 		<Cloud />
 		<enhanced:img
@@ -196,7 +199,7 @@
 	.subHeader {
 		font-size: 5rem;
 		letter-spacing: 3px;
-		text-shadow: 0 0 17px #4b45af;
+		text-shadow: 3px 3px 2px var(--text-shadow-colour);
 		font-family: 'Jersey 10', sans-serif;
 		margin: 0;
 		padding: 1rem 0 0.5rem;

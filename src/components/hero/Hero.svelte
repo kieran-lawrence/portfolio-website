@@ -1,13 +1,16 @@
 <script>
 	import { writable } from 'svelte/store';
 	import BackgroundTop from '../BackgroundTop.svelte';
+	import { activeTheme } from '$lib';
 
 	const randomValue = writable(Math.random() * 10);
 </script>
 
 <div id="hero">
 	<BackgroundTop />
-	<h1 style={`--random-x: ${$randomValue}px; --random-y: ${$randomValue * 1.5}px;`}>
+	<h1
+		style={`--random-x: ${$randomValue}px; --random-y: ${$randomValue * 1.5}px;--text-shadow-colour:${$activeTheme.pallette.textShadowColour}`}
+	>
 		Hi, I'm Kieran.
 	</h1>
 	<h2>
@@ -38,7 +41,7 @@
 	#hero h1 {
 		font-size: 6rem;
 		letter-spacing: 3px;
-		text-shadow: 0 0 17px #4b45af;
+		text-shadow: 3px 3px 2px var(--text-shadow-colour);
 		animation: cloud-drift 20s infinite linear;
 		transform-origin: center;
 	}
