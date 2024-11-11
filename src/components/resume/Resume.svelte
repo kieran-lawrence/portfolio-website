@@ -240,6 +240,9 @@
 
 	/* Mobile Styling */
 	@media only screen and (max-width: 680px) {
+		#resume {
+			padding-top: 3rem;
+		}
 		.subHeader {
 			font-size: 3.3rem;
 			text-align: center;

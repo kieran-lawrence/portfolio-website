@@ -33,7 +33,7 @@ const theme: Themes = {
 		textColour: '#F5F5F5',
 		textShadowColour: '#302C7D',
 		backgroundColour: '#465EA4',
-		backgroundColourAlt: '#16003454',
+		backgroundColourAlt: '#27005f',
 		backgroundGradientFrom: '#26254F',
 		backgroundGradientTo: '#646CB4',
 		cloudsOneColour: '#465EA4',

@@ -42,7 +42,10 @@
 	/>
 </svelte:head>
 
-<header class="stickyHeader">
+<header
+	class="stickyHeader"
+	style={`--text-colour: ${$activeTheme.pallette.textColour};--background-colour:${$activeTheme.pallette.backgroundColour};--text-hover-colour:${$activeTheme.pallette.backgroundColourAlt};`}
+>
 	<nav>
 		<Hamburger
 			isOpen={$showMenu}
@@ -106,22 +109,27 @@
 		align-items: center;
 		width: fit-content;
 		z-index: 100;
+		gap: 1.5rem;
 		font-family: 'Andale Mono', monospace;
 	}
 	ul {
 		height: 100%;
 		display: flex;
 		list-style: none;
-		gap: 1.5rem;
-		font-size: 1.5rem;
+		gap: 0.5rem;
+		font-size: 1.7rem;
 		margin: 0;
+		padding: 0;
 	}
 	li a {
+		background: var(--text-hover-colour);
+		border-radius: 1rem;
+		display: block;
+		padding: 0.3rem 0.6rem;
 		text-decoration: none;
-		color: var(--text-colour);
 	}
 	li a:hover {
-		color: var(--text-hover-colour);
+		opacity: 0.6;
 	}
 
 	/* Mobile Styling */
@@ -133,9 +141,9 @@
 		ul {
 			position: absolute;
 			flex-direction: column;
-			top: 0.7rem;
-			left: 3rem;
-			padding-left: 1rem;
+			top: 3.5rem;
+			left: 0rem;
+			padding: 0;
 		}
 	}
 </style>

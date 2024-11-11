@@ -90,6 +90,7 @@
 		}
 		.jobTitle {
 			font-size: 1.2rem;
+			text-align: center;
 		}
 		.companyDateWrapper {
 			flex-direction: column;
