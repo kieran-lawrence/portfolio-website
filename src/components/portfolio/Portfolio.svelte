@@ -42,6 +42,7 @@
 		text-shadow: 3px 3px 2px var(--text-shadow-colour);
 		font-family: 'Coiny', system-ui;
 		margin: 0;
+		padding: 1rem 0 0.5rem;
 	}
 	.portfolioCards {
 		width: 60vw;
@@ -60,6 +61,8 @@
 	@media only screen and (max-width: 680px) {
 		h2 {
 			font-size: 3.5rem;
+			text-align: center;
+			line-height: 1.2;
 		}
 		.portfolioCards {
 			width: 90vw;

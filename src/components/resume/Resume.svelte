@@ -242,12 +242,18 @@
 	@media only screen and (max-width: 680px) {
 		.subHeader {
 			font-size: 3.5rem;
+			text-align: center;
+			line-height: 1.2;
 		}
 		.resumeContainer {
 			width: 90vw;
 			display: flex;
 			flex-direction: column;
 			gap: 1rem;
+		}
+		.imageWrapper {
+			padding: 2rem 0;
+			box-sizing: border-box;
 		}
 	}
 	/* Tablet Styling */

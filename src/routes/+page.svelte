@@ -28,6 +28,7 @@
 <svelte:head>
 	<meta property="og:title" content="Code By Kieran | Developer Portfolio Website" />
 	<meta property="og:type" content="website" />
+	<meta name="theme-color" content={$activeTheme.pallette.backgroundGradientFrom} />
 	<meta
 		property="og:image"
 		content={dev
@@ -78,7 +79,10 @@
 <style>
 	html {
 		scroll-behavior: smooth;
+		overflow-x: hidden;
+		overscroll-behavior: none;
 	}
+
 	* {
 		margin: 0;
 		color: var(--text-colour);
@@ -118,5 +122,20 @@
 	}
 	li a:hover {
 		color: var(--text-hover-colour);
+	}
+
+	/* Mobile Styling */
+	@media only screen and (max-width: 680px) {
+		nav {
+			align-items: flex-start;
+			position: relative;
+		}
+		ul {
+			position: absolute;
+			flex-direction: column;
+			top: 0.7rem;
+			left: 3rem;
+			padding-left: 1rem;
+		}
 	}
 </style>

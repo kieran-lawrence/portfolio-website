@@ -11,7 +11,7 @@
 		: `top 250ms 350ms ${timingFunction}, transform 250ms 50ms ${timingFunction}`;
 </script>
 
-<button class="navMenu" class:isOpen on:click style={vars} aria-label="Menu">
+<button class="navMenu" class:isOpen on:click style={vars} aria-label="Menu" tabindex="0">
 	<span
 		class="bar top"
 		style="transition: {lineTransition}; {isOpen ? 'transform: rotate(45deg)' : ''}"

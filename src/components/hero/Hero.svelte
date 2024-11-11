@@ -37,6 +37,7 @@
 		padding: 0;
 		text-align: center;
 		font-family: 'Coiny', system-ui;
+		z-index: 2;
 	}
 	#hero h1 {
 		font-size: 6rem;
