@@ -42,34 +42,34 @@
 	/>
 </svelte:head>
 
+<header class="stickyHeader">
+	<nav>
+		<Hamburger
+			isOpen={$showMenu}
+			on:click={() => handleMenuClick(!$showMenu)}
+			backgroundColour={$activeTheme.pallette.textColour}
+			barColour={$activeTheme.pallette.backgroundGradientFrom}
+			barHoverColour={$activeTheme.pallette.backgroundGradientTo}
+		/>
+		{#if $showMenu}
+			<ul>
+				<li transition:fly={{ y: -25 }}>
+					<a href="#" on:click={() => handleMenuClick(false)}>Home</a>
+				</li>
+				<li transition:fly={{ delay: 100, y: -25 }}>
+					<a href="#resume" on:click={() => handleMenuClick(false)}>Resume</a>
+				</li>
+				<li transition:fly={{ delay: 200, y: -25 }}>
+					<a href="#portfolio" on:click={() => handleMenuClick(false)}>Portfolio</a>
+				</li>
+			</ul>
+		{/if}
+	</nav>
+	<ThemeIcon />
+</header>
 <main
 	style={`--text-colour: ${$activeTheme.pallette.textColour};--background-colour:${$activeTheme.pallette.backgroundColour};--text-hover-colour:${$activeTheme.isDark ? $activeTheme.pallette.backgroundColourAlt : $activeTheme.pallette.cloudsOneColour};`}
 >
-	<div class="stickyHeader">
-		<nav>
-			<Hamburger
-				isOpen={$showMenu}
-				on:click={() => handleMenuClick(!$showMenu)}
-				backgroundColour={$activeTheme.pallette.textColour}
-				barColour={$activeTheme.pallette.backgroundGradientFrom}
-				barHoverColour={$activeTheme.pallette.backgroundGradientTo}
-			/>
-			{#if $showMenu}
-				<ul>
-					<li transition:fly={{ y: -25 }}>
-						<a href="#" on:click={() => handleMenuClick(false)}>Home</a>
-					</li>
-					<li transition:fly={{ delay: 100, y: -25 }}>
-						<a href="#resume" on:click={() => handleMenuClick(false)}>Resume</a>
-					</li>
-					<li transition:fly={{ delay: 200, y: -25 }}>
-						<a href="#portfolio" on:click={() => handleMenuClick(false)}>Portfolio</a>
-					</li>
-				</ul>
-			{/if}
-		</nav>
-		<ThemeIcon />
-	</div>
 	<Hero />
 	<Resume />
 	<Portfolio portfolioData={data} />
@@ -82,10 +82,6 @@
 		overflow-x: hidden;
 		overscroll-behavior: none;
 	}
-	body {
-		background: var(--background-colour);
-	}
-
 	* {
 		margin: 0;
 		color: var(--text-colour);
@@ -103,6 +99,7 @@
 		left: 0;
 		padding: 1rem 1rem;
 		z-index: 99;
+		box-sizing: border-box;
 	}
 	nav {
 		display: flex;
