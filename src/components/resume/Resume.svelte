@@ -241,7 +241,7 @@
 	/* Mobile Styling */
 	@media only screen and (max-width: 680px) {
 		.subHeader {
-			font-size: 3.5rem;
+			font-size: 3.3rem;
 			text-align: center;
 			line-height: 1.2;
 		}

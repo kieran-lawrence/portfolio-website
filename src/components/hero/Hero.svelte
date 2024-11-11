@@ -102,6 +102,7 @@
 	@media only screen and (max-width: 680px) {
 		#hero h1 {
 			font-size: 4rem;
+			width: 80vw;
 		}
 		#hero h2 {
 			font-size: 1.5rem;

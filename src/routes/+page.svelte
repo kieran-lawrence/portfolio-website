@@ -82,6 +82,9 @@
 		overflow-x: hidden;
 		overscroll-behavior: none;
 	}
+	body {
+		background: var(--background-colour);
+	}
 
 	* {
 		margin: 0;
