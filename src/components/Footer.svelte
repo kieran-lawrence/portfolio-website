@@ -112,7 +112,7 @@
 <style>
 	.backgroundBottom {
 		background: linear-gradient(to bottom, var(--color-sky-from), var(--color-sky-to));
-		width: 100vw;
+		width: 100%;
 		display: flex;
 	}
 	svg {
