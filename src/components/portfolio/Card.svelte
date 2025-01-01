@@ -70,23 +70,23 @@
 	}
 	.cardContainer:nth-of-type(2) {
 		/* Improved Obsidian */
-		grid-row: 1;
-		grid-column: 1 / span 3;
+		grid-column: 2 / span 3;
+		grid-row: 3;
 	}
 	.cardContainer:nth-of-type(3) {
 		/** KlipIt */
-		grid-row: 1;
-		grid-column: 4;
-	}
-	.cardContainer:nth-of-type(4) {
-		/** KanBan App */
 		grid-column: 1;
 		grid-row: 3;
 	}
+	.cardContainer:nth-of-type(4) {
+		/** KanBan App */
+		grid-row: 1;
+		grid-column: 4;
+	}
 	.cardContainer:nth-of-type(5) {
 		/** Quill */
-		grid-column: 2 / span 3;
-		grid-row: 3;
+		grid-row: 1;
+		grid-column: 1 / span 3;
 	}
 	.imageContainer {
 		width: 100%;
