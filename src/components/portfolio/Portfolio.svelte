@@ -4,7 +4,13 @@
 	import Card from './Card.svelte';
 
 	export let portfolioData;
-	const ignoreList = ['github-readme-stats', 'kieran-lawrence', 'portfolio-website'];
+	const ignoreList = [
+		'github-readme-stats',
+		'kieran-lawrence',
+		'portfolio-website',
+		'klipit',
+		'my-kanban-app'
+	];
 </script>
 
 <div id="portfolio" style={`--text-shadow-colour:${$activeTheme.pallette.textShadowColour}`}>
@@ -25,6 +31,22 @@
 					/>
 				{/if}
 			{/each}
+			<Card
+				cardLink={'#'}
+				cardDescription={'A mobile app for tracking your collection of books. I plan to automate the deployment with Fastlane and GitHub CI/CD.'}
+				cardTitle={'coming-soon'}
+				cardTextColour={$activeTheme.pallette.textColour}
+				cardPillColour={$activeTheme.pallette.backgroundColourAlt}
+				skills={['React Native', 'Fastlane', 'GitHub CI/CD']}
+			/>
+			<Card
+				cardLink={'#'}
+				cardDescription={'Coming Soon'}
+				cardTitle={'coming-soon'}
+				cardTextColour={$activeTheme.pallette.textColour}
+				cardPillColour={$activeTheme.pallette.backgroundColourAlt}
+				skills={[]}
+			/>
 		{/if}
 	</ul>
 </div>

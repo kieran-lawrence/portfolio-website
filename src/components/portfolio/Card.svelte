@@ -74,19 +74,19 @@
 		grid-row: 3;
 	}
 	.cardContainer:nth-of-type(3) {
-		/** KlipIt */
-		grid-column: 1;
-		grid-row: 3;
+		/** Quill */
+		grid-row: 1;
+		grid-column: 1 / span 3;
 	}
 	.cardContainer:nth-of-type(4) {
-		/** KanBan App */
+		/** Placeholder 1 */
 		grid-row: 1;
 		grid-column: 4;
 	}
 	.cardContainer:nth-of-type(5) {
-		/** Quill */
-		grid-row: 1;
-		grid-column: 1 / span 3;
+		/** Placeholder 2 */
+		grid-row: 3;
+		grid-column: 1;
 	}
 	.imageContainer {
 		width: 100%;
