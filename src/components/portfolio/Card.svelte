@@ -5,7 +5,8 @@
 		cardTextColour,
 		cardPillColour,
 		cardLink,
-		skills
+		skills,
+		onCardClick
 	}: {
 		cardTitle: string;
 		cardDescription: string;
@@ -13,6 +14,7 @@
 		cardPillColour: string;
 		cardLink: string;
 		skills: string[];
+		onCardClick?: () => void;
 	} = $props();
 
 	let formattedTitle = cardTitle.replaceAll('-', ' ');
@@ -22,13 +24,12 @@
 	class="cardContainer"
 	style={`--card-text-colour: ${cardTextColour};--card-info-bg-colour:${cardPillColour};`}
 >
-	<a
+	<button
 		class={formattedTitle.includes('bulletin') ? 'card horizontal' : 'card'}
-		href={cardLink}
-		target="_blank"
+		onclick={onCardClick}
 	>
 		<div class="imageContainer">
-			{#await import(`$lib/assets/portfolio/${cardTitle}.png`) then { default: src }}
+			{#await import(`$lib/assets/portfolio/${cardTitle}/0.png`) then { default: src }}
 				<img {src} alt={formattedTitle} class="image" loading="lazy" />
 			{/await}
 		</div>
@@ -45,7 +46,7 @@
 				</ul>
 			</div>
 		</div>
-	</a>
+	</button>
 </li>
 
 <style>
@@ -58,7 +59,12 @@
 		justify-content: stretch;
 		backdrop-filter: blur(8px);
 		border-radius: 1rem;
+
+		button {
+			cursor: pointer;
+		}
 	}
+
 	.cardContainer:hover {
 		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
 		animation: animate-box-shadow 2s infinite;
@@ -82,11 +88,19 @@
 		/** Placeholder 1 */
 		grid-row: 1;
 		grid-column: 4;
+
+		button {
+			cursor: default;
+		}
 	}
 	.cardContainer:nth-of-type(5) {
 		/** Placeholder 2 */
 		grid-row: 3;
 		grid-column: 1;
+
+		button {
+			cursor: default;
+		}
 	}
 	.imageContainer {
 		width: 100%;
@@ -140,6 +154,7 @@
 		border: 2px solid var(--card-text-colour);
 		padding-bottom: 1rem;
 		border-radius: 1rem;
+		background: inherit;
 	}
 	.horizontal {
 		flex-direction: row;

@@ -2,6 +2,13 @@
 	import { activeTheme } from '$lib';
 	import { loading } from '$lib';
 	import Card from './Card.svelte';
+	import { onMount } from 'svelte';
+	import Carousel from './Carousel.svelte';
+	import { writable, type Writable } from 'svelte/store';
+
+	let imagePath: Writable<string> = writable('');
+	let showCarousel: Writable<boolean> = writable(false);
+	let currentImageIndex = 0;
 
 	export let portfolioData;
 	const ignoreList = [
@@ -11,6 +18,32 @@
 		'klipit',
 		'my-kanban-app'
 	];
+
+	const openCarousel = (index: any, path: string) => {
+		currentImageIndex = index;
+
+		imagePath.set(path);
+		showCarousel.set(true);
+	};
+
+	const closeCarousel = () => showCarousel.set(false);
+
+	onMount(() => {
+		document.addEventListener('keydown', handleKeydown);
+		return () => document.removeEventListener('keydown', handleKeydown);
+	});
+
+	const handleKeydown = (event: KeyboardEvent) => {
+		if (showCarousel) {
+			if (event.key === 'ArrowRight') {
+				currentImageIndex += 1;
+			} else if (event.key === 'ArrowLeft') {
+				currentImageIndex -= 1;
+			} else if (event.key === 'Escape') {
+				closeCarousel();
+			}
+		}
+	};
 </script>
 
 <div id="portfolio" style={`--text-shadow-colour:${$activeTheme.pallette.textShadowColour}`}>
@@ -28,6 +61,7 @@
 						cardTextColour={$activeTheme.pallette.textColour}
 						cardPillColour={$activeTheme.pallette.backgroundColourAlt}
 						skills={repo.topics}
+						onCardClick={() => openCarousel(0, repo.name)}
 					/>
 				{/if}
 			{/each}
@@ -50,6 +84,10 @@
 		{/if}
 	</ul>
 </div>
+
+{#if $showCarousel}
+	<Carousel bind:currentImageIndex onClose={closeCarousel} imagePath={$imagePath} />
+{/if}
 
 <style>
 	#portfolio {
