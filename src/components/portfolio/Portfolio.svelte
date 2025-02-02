@@ -86,7 +86,12 @@
 </div>
 
 {#if $showCarousel}
-	<Carousel bind:currentImageIndex onClose={closeCarousel} imagePath={$imagePath} />
+	<Carousel
+		bind:currentImageIndex
+		onClose={closeCarousel}
+		imagePath={$imagePath}
+		backgroundColour={$activeTheme.pallette.backgroundColour}
+	/>
 {/if}
 
 <style>
