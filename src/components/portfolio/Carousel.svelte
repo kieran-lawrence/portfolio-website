@@ -1,10 +1,16 @@
 <script lang="ts">
+	import IconChevronLeft from '../icons/IconChevronLeft.svelte';
+	import IconChevronRight from '../icons/IconChevronRight.svelte';
+	import IconClose from '../icons/IconClose.svelte';
+
 	let {
 		currentImageIndex = $bindable<number>(),
 		onClose,
-		imagePath
+		imagePath,
+		backgroundColour
 	}: {
 		imagePath: string;
+		backgroundColour: string;
 		currentImageIndex: number;
 		onClose?: () => void;
 	} = $props();
@@ -32,16 +38,27 @@
 			currentImageIndex = imageCounts[imagePath] - 1;
 		}
 	};
+
+	const handleClickOutside = (event: MouseEvent) => {
+		const target = event.target as HTMLElement;
+		if (target.classList.contains('carousel')) {
+			onClose?.();
+		}
+	};
 </script>
 
-<section class="carousel">
-	<button class="close" onclick={onClose}>{'x'}</button>
+<section
+	class="carousel"
+	style={`--background-color:${backgroundColour}`}
+	onclick={handleClickOutside}
+>
+	<button class="close" onclick={onClose}><IconClose /></button>
 	<div class="carousel-content">
-		<button class="prev" onclick={prevImage}>{'<'}</button>
+		<button class="prev" onclick={prevImage}><IconChevronLeft /></button>
 		{#await import(`$lib/assets/portfolio/${imagePath}/${currentImageIndex}.png`) then { default: src }}
 			<img {src} alt={'Carousel'} class="image" loading="lazy" />
 		{/await}
-		<button class="next" onclick={nextImage}>{'>'}</button>
+		<button class="next" onclick={nextImage}><IconChevronRight /></button>
 	</div>
 </section>
 
@@ -70,7 +87,7 @@
 	.prev,
 	.next {
 		position: absolute;
-		background: #1a1a1a;
+		background: var(--background-color);
 		border: none;
 		color: #f1f1f1;
 		font-size: 2rem;
@@ -78,6 +95,9 @@
 		width: 3rem;
 		height: 3rem;
 		border-radius: 50%;
+		display: grid;
+		place-items: center;
+		padding: 0;
 	}
 	.close {
 		top: 0.9rem;
