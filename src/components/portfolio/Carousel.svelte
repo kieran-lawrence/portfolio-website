@@ -9,14 +9,34 @@
 		onClose?: () => void;
 	} = $props();
 
-	const nextImage = () => (currentImageIndex += 1);
+	// Not the best way to do this, but it works for now
+	const imageCounts: Record<string, number> = {
+		'coming-soon': 1,
+		quill: 6,
+		'bulletin-news': 1,
+		'improved-obisidan': 1
+	};
 
-	const prevImage = () => (currentImageIndex -= 1);
+	const nextImage = () => {
+		if (currentImageIndex < imageCounts[imagePath] - 1) {
+			currentImageIndex += 1;
+		} else {
+			currentImageIndex = 0;
+		}
+	};
+
+	const prevImage = () => {
+		if (currentImageIndex > 0) {
+			currentImageIndex -= 1;
+		} else {
+			currentImageIndex = imageCounts[imagePath] - 1;
+		}
+	};
 </script>
 
 <section class="carousel">
+	<button class="close" onclick={onClose}>{'x'}</button>
 	<div class="carousel-content">
-		<button class="close" onclick={onClose}>{'x'}</button>
 		<button class="prev" onclick={prevImage}>{'<'}</button>
 		{#await import(`$lib/assets/portfolio/${imagePath}/${currentImageIndex}.png`) then { default: src }}
 			<img {src} alt={'Carousel'} class="image" loading="lazy" />
@@ -40,9 +60,11 @@
 	}
 	.carousel-content {
 		position: relative;
-		width: 80vw;
-
+		width: 90vw;
 		height: auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 	.close,
 	.prev,
@@ -58,21 +80,22 @@
 		border-radius: 50%;
 	}
 	.close {
-		top: 1rem;
-		right: 1rem;
+		top: 0.9rem;
+		right: 0.9rem;
 	}
 	.prev {
-		left: 1rem;
+		left: 0;
 		top: 50%;
 		transform: translateY(-50%);
 	}
 	.next {
-		right: 1rem;
+		right: 0;
 		top: 50%;
 		transform: translateY(-50%);
 	}
 	.image {
-		width: 100%;
+		width: 90%;
 		height: auto;
+		border-radius: 0.5rem;
 	}
 </style>
