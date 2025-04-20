@@ -1,29 +1,39 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  /* Dark Theme Color Variables */
+  --color-bg-dark: #465EA4;
+  --color-bg-dark-alt: #27005f;
+  --color-bg-dark-gradient-from: #26254F;
+  --color-bg-dark-gradient-to: #646CB4;
+  --color-text-dark: #EDEDED;
+  --color-text-dark-shadow: #302C7D;
+  --color-clouds-two-dark: #7B94D4;
+  --color-clouds-three-dark: #9EB6E6;
+
+  /* Light Theme Color Variables */
+  --color-bg-light: #6BA6E6;
+  --color-bg-light-alt: #90BBE9;
+  --color-bg-light-gradient-from: #458CD8;
+  --color-bg-light-gradient-to: #9AADFF;
+  --color-text-light: #171717;
+  --color-text-light-shadow: #CCC9FD;
+  --color-clouds-two-light: #84BEF5;
+  --color-clouds-three-light: #A0D0F5;
+
+  /** Common Color Variables */
+  --color-react-icon: #75c2d9;
+	--color-aws-icon: #f19e39;
+	--color-ts-icon: #4272ba;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+h1,h2,h3 {
+  font-family: var(--font-primary);
+  text-align: center;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-html {
-  scroll-behavior: smooth;
+h2 {
+  font-size: var(--text-6xl);
+  line-height: var(--tw-leading, var(--text-6xl--line-height));
 }

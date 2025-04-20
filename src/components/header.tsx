@@ -1,8 +1,10 @@
 import Link from 'next/link';
+import ThemeToggle from './themeToggle';
 
 export default function SiteHeader() {
 	return (
 		<header>
+			<ThemeToggle />
 			<nav>
 				<ul className="flex gap-4">
 					<li>

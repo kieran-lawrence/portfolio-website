@@ -1,8 +1,7 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Coiny } from 'next/font/google';
 import './globals.css';
 import SiteHeader from '@/components/header';
-import Head from 'next/head';
 
 const coinyFont = Coiny({ variable: '--font-primary', subsets: ['latin'], weight: '400' });
 
@@ -10,15 +9,14 @@ export const metadata: Metadata = {
 	title: 'Kieran Lawrence | Software Developer',
 	description: 'Developer portfolio for Kieran Lawrence | Perth WA | Software Developer',
 };
+export const viewport: Viewport = { themeColor: '#6BA6E6', width: 'device-width', initialScale: 1 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
 	return (
 		<html lang="en">
-			<Head>
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<meta name="og:image" content="/social-image.png" />
-			</Head>
-			<body className={`${coinyFont.variable} antialiased`}>
+			<body
+				className={`${coinyFont.variable} text-text-light dark:text-text-dark from-bg-light-gradient-from to-bg-light-gradient-to dark:from-bg-dark-gradient-from dark:to-bg-dark-gradient-to scroll-smooth bg-gradient-to-b antialiased transition duration-250`}
+			>
 				<SiteHeader />
 				{children}
 			</body>
