@@ -18,7 +18,9 @@ export default function SkillsItem({
 				{skillItems.map((item) => (
 					<p
 						className={
-							kind === 'tools' ? 'bg-aws-icon skillsCard' : 'bg-react-icon skillsCard'
+							kind === 'tools'
+								? 'bg-aws-icon skillsCard text-bg-dark-alt'
+								: 'bg-react-icon skillsCard text-bg-dark-alt'
 						}
 						key={item}
 					>

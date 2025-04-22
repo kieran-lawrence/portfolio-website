@@ -1,5 +1,6 @@
 import CloudsBackgroundBottom from '@/components/cloudsBackgroundBottom';
 import CloudsBackgroundTop from '@/components/cloudsBackgroundTop';
+import Portfolio from '@/components/portfolio';
 import Resume from '@/components/resume';
 
 export default function Home() {
@@ -18,13 +19,10 @@ export default function Home() {
 			<div className="relative h-[376px] w-full">
 				<CloudsBackgroundTop />
 			</div>
-			<div id="resume" className="bg-bg-light dark:bg-bg-dark w-full transition duration-250">
+			<div className="bg-bg-light dark:bg-bg-dark flex w-full flex-col gap-16 transition duration-250">
 				<Resume />
+				<Portfolio />
 			</div>
-			<div
-				id="portfolio"
-				className="bg-bg-light dark:bg-bg-dark w-full transition duration-250"
-			></div>
 			<div className="relative w-full">
 				<CloudsBackgroundBottom />
 			</div>

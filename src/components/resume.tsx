@@ -5,7 +5,7 @@ import SkillsItem from './skillsItem';
 
 export default function Resume() {
 	return (
-		<div id="resume" className="flex w-full flex-col items-center justify-center">
+		<div id="resume" className="flex w-full flex-col items-center justify-center gap-4">
 			<h2>Work History</h2>
 			<div className="grid w-[65vw] max-w-[85rem] grid-cols-4 place-items-center gap-8">
 				<ResumeCard
