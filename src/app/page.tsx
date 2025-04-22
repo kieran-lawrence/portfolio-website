@@ -18,15 +18,12 @@ export default function Home() {
 			<div className="relative h-[376px] w-full">
 				<CloudsBackgroundTop />
 			</div>
-			<div
-				id="resume"
-				className="bg-bg-light dark:bg-bg-dark h-screen w-full transition duration-250"
-			>
+			<div id="resume" className="bg-bg-light dark:bg-bg-dark w-full transition duration-250">
 				<Resume />
 			</div>
 			<div
 				id="portfolio"
-				className="bg-bg-light dark:bg-bg-dark h-screen w-full transition duration-250"
+				className="bg-bg-light dark:bg-bg-dark w-full transition duration-250"
 			></div>
 			<div className="relative w-full">
 				<CloudsBackgroundBottom />

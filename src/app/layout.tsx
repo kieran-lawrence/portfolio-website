@@ -15,7 +15,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 	return (
 		<html lang="en">
 			<body
-				className={`${coinyFont.variable} text-text-light dark:text-text-dark from-bg-light-gradient-from to-bg-light-gradient-to dark:from-bg-dark-gradient-from dark:to-bg-dark-gradient-to scroll-smooth bg-gradient-to-b antialiased transition duration-250`}
+				className={`${coinyFont.variable} text-text-light dark:text-text-dark from-bg-light-gradient-from to-bg-light-gradient-to dark:from-bg-dark-gradient-from dark:to-bg-dark-gradient-to scroll-smooth bg-gradient-to-b font-sans antialiased transition duration-250`}
 			>
 				<SiteHeader />
 				{children}

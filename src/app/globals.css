@@ -27,13 +27,47 @@
   --color-react-icon: #75c2d9;
 	--color-aws-icon: #f19e39;
 	--color-ts-icon: #4272ba;
+
+  /** Common Font Variables */
+  --tracking-mono-tight: -0.04em;
+  --font-mono: 'Andale Mono', monospace;
 }
 
-h1,h2,h3 {
+h1,h2 {
   font-family: var(--font-primary);
   text-align: center;
+}
+h3,h4,h5 {
+  font-family: var(--font-mono);
+  letter-spacing:var(--tracking-mono-tight);
 }
 h2 {
   font-size: var(--text-6xl);
   line-height: var(--tw-leading, var(--text-6xl--line-height));
+}
+
+@layer components {
+  .skillsCard {
+    border-radius: 1rem;
+		padding: 0.4rem 0.8rem;
+		width: max-content;
+    font-weight: 500;
+  }
+  .resumeInfoList {
+    display: flex;
+		justify-content: space-evenly;
+		flex: 1;
+		flex-direction: column;
+		font-size: 1.1rem;
+		gap: 0.5rem;
+		text-transform: lowercase;
+		padding-left: 1rem;
+    list-style: disc;
+  }
+  .resumeInfoList bold {
+    font-weight: 600;
+  }
+  .capitalised {
+    text-transform: capitalize;
+  }
 }
