@@ -31,12 +31,9 @@ export default async function Portfolio() {
 	}
 
 	return (
-		<div
-			id="portfolio"
-			className="flex h-[100vh] w-full flex-col items-center justify-center gap-4"
-		>
+		<div id="portfolio" className="flex w-full flex-col items-center justify-center gap-4">
 			<h2>Portfolio</h2>
-			<ul className="portfolioGrid h-full w-[65vw] max-w-[85rem] justify-center gap-8">
+			<ul className="portfolioGrid">
 				{portfolioData &&
 					portfolioData.map(
 						(repo: GitHubResponseType) =>
