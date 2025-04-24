@@ -33,6 +33,33 @@
   --font-mono: 'Andale Mono', monospace;
 
   --radius-mlg: 0.35rem;
+
+  @keyframes header-bg-scroll-light {
+    from {
+      background-color: none;
+      border:1px solid transparent;
+      backdrop-filter:none;
+    }
+    to {
+      background-color: #6BA6E6CC;
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--color-text-light);
+    }
+  }
+  @keyframes header-bg-scroll-dark {
+    from {
+      background-color: none;
+      border:1px solid transparent;
+      backdrop-filter:none;
+    }
+    to {
+      background-color: #26254FCC;
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--color-text-dark);
+    }
+  }
+  --animate-header-bg-light: header-bg-scroll-light;
+  --animate-header-bg-dark: header-bg-scroll-dark;
 }
 
 h1,h2 {
@@ -123,6 +150,77 @@ h2 {
     }
     &:where([data-theme=dark], [data-theme=dark] *) {
       border-color: var(--color-text-dark);
-  }
+    }
 	}
+  .animatedHeader {
+    animation: var(--animate-header-bg-light) linear forwards;
+    animation-timeline: scroll();
+    animation-range: 0vh 30vh;
+
+    &:where([data-theme=dark], [data-theme=dark] *) {
+      animation: var(--animate-header-bg-dark) linear forwards;
+      animation-timeline: scroll();
+      animation-range: 0vh 30vh;
+    }
+  }
+  .headNavItem {
+    transition: color 0.25s ease;
+    outline: none;
+
+    &:is(:hover, :focus-within) {
+      @media (hover: hover) {
+        color: var(--color-bg-dark);
+      }
+    }
+  }
+  .themeToggleInput {
+    width: 0;
+    height: 0;
+    opacity: 0;
+
+    &:checked + .themeToggleSlider {
+      background-color: var(--color-clouds-two-dark);
+    }
+    &:checked + .themeToggleSlider:before {
+      transform: translateX(calc(var(--spacing) * 9));
+      -webkit-transform: translateX(calc(var(--spacing) * 9));
+      -ms-transform: translateX(calc(var(--spacing) * 9));
+    }
+    &:focus + .themeToggleSlider {
+      outline: 2px solid var(--color-bg-dark);
+    }
+  }
+  .themeToggleSlider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-clouds-two-light);
+    border-radius: var(--radius-3xl);
+    transition: all 0.25s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 calc(var(--spacing) * 2);
+    outline: 2px solid var(--color-clouds-two-dark);
+    border: none;
+
+    &:where([data-theme=dark], [data-theme=dark] *) {
+      outline: 2px solid var(--color-clouds-two-dark);
+    }
+      
+    &:before {
+      position: absolute;
+      content:"";
+      height: calc(var(--spacing) * 7);
+      width: calc(var(--spacing) * 7);
+      left: var(--spacing);
+      bottom: var(--spacing);
+      background-color: var(--color-text-dark);
+      border-radius: 50%;
+      transition: all 0.3s ease-in-out;
+    }
+  }
 }
