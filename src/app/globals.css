@@ -171,15 +171,17 @@ h2 {
     }
 	}
   .animatedHeader {
-    animation: var(--animate-header-bg-light) linear forwards;
-    animation-timeline: scroll();
-    animation-range: 0vh 30vh;
-
-    &:where([data-theme=dark], [data-theme=dark] *) {
-      animation: var(--animate-header-bg-dark) linear forwards;
+    @media (width >= 48rem) {
+      animation: var(--animate-header-bg-light) linear forwards;
       animation-timeline: scroll();
       animation-range: 0vh 30vh;
-    }
+
+      &:where([data-theme=dark], [data-theme=dark] *) {
+        animation: var(--animate-header-bg-dark) linear forwards;
+        animation-timeline: scroll();
+        animation-range: 0vh 30vh;
+      }
+    }    
   }
   .headNavItem {
     transition: color 0.25s ease;
@@ -239,6 +241,17 @@ h2 {
       background-color: var(--color-text-dark);
       border-radius: 50%;
       transition: all 0.3s ease-in-out;
+    }
+  }
+  .resumeLinkIcons {
+    border-radius: 50%;
+		width: 3rem;
+		height: 3rem;
+		display: grid;
+		place-items: center;
+
+    a {
+      width: 100%;
     }
   }
 }
