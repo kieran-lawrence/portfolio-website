@@ -1,8 +1,8 @@
 'use client';
 
 import { useEffect } from 'react';
-import IconSun from './iconSun';
-import IconMoon from './iconMoon';
+import IconSun from './icons/iconSun';
+import IconMoon from './icons/iconMoon';
 
 export default function ThemeToggle() {
 	// Set the initial theme based on the user's system preference

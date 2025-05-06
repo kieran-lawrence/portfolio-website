@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import IconEmail from './iconEmail';
-import IconGithub from './iconGithub';
-import IconLinkedIn from './iconLinkedIn';
+import IconEmail from './icons/iconEmail';
+import IconGithub from './icons/iconGithub';
+import IconLinkedIn from './icons/iconLinkedIn';
 
 export default function Portrait() {
 	return (

@@ -1,5 +1,5 @@
-import IconAwsLambda from './iconAwsLambda';
-import IconReact from './iconReact';
+import IconAwsLambda from './icons/iconAwsLambda';
+import IconReact from './icons/iconReact';
 import ResumeCard from './resumeCard';
 import SkillsItem from './skillsItem';
 

@@ -1,5 +1,5 @@
-import CloudsBackgroundBottom from '@/components/cloudsBackgroundBottom';
-import CloudsBackgroundTop from '@/components/cloudsBackgroundTop';
+import CloudsBackgroundBottom from '@/components/icons/cloudsBackgroundBottom';
+import CloudsBackgroundTop from '@/components/icons/cloudsBackgroundTop';
 import Portfolio from '@/components/portfolio';
 import Portrait from '@/components/portrait';
 import Resume from '@/components/resume';
