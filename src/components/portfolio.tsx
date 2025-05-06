@@ -54,9 +54,11 @@ export default async function Portfolio() {
 					skills={['React Native', 'Fastlane', 'GitHub CI/CD']}
 				/>
 				<PortfolioCard
-					cardDescription={'Coming Soon'}
+					cardDescription={
+						'An AWS based serverless API for the management of comments for my news app, Bulletin'
+					}
 					cardTitle={'coming-soon'}
-					skills={['Coming Soon']}
+					skills={['AWS', 'Pulumi']}
 				/>
 			</ul>
 		</div>
