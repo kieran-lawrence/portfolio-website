@@ -19,17 +19,13 @@ export default function Home() {
 				</h3>
 				<Portrait />
 			</div>
-			<div className="relative h-[6rem] w-screen md:h-[20rem] 2xl:h-[40rem]">
-				<CloudsBackgroundTop />
-			</div>
+			<CloudsBackgroundTop />
 			<div className="bg-bg-light dark:bg-bg-dark flex w-full flex-col gap-16 py-8 transition duration-250">
 				<Resume />
 				<Education />
 				<Portfolio />
 			</div>
-			<div className="relative h-[8.5rem] w-screen 2xl:h-[17rem]">
-				<CloudsBackgroundBottom />
-			</div>
+			<CloudsBackgroundBottom />
 		</main>
 	);
 }
