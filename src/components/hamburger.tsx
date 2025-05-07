@@ -1,0 +1,46 @@
+'use client';
+
+import { PropsWithChildren } from 'react';
+
+type HamburgerProps = {
+	isOpen: boolean;
+	setIsOpen: (isOpen: boolean) => void;
+};
+export default function Hamburger({
+	children,
+	isOpen,
+	setIsOpen,
+}: PropsWithChildren<HamburgerProps>) {
+	// Override the theme when toggling the theme slider
+	const handleToggleClick = () => {
+		setIsOpen(!isOpen);
+		const hamburgerMenuBar = document.querySelectorAll('.hamburgerMenuBar');
+		const mobileNav = document.querySelector('.mobileNav');
+		if (isOpen) {
+			hamburgerMenuBar.forEach((bar) => {
+				bar.classList.add('open');
+			});
+			mobileNav?.classList.add('open');
+		} else {
+			hamburgerMenuBar.forEach((bar) => {
+				bar.classList.remove('open');
+			});
+			mobileNav?.classList.remove('open');
+		}
+	};
+	return (
+		<div className="relative flex w-full items-center justify-between px-4 py-2 md:hidden">
+			<button
+				className="group relative block h-12 w-12 cursor-pointer rounded-full border-0 p-0"
+				aria-label="Menu"
+				onClick={handleToggleClick}
+				aria-expanded={isOpen}
+			>
+				<span className="hamburgerMenuBar" />
+				<span className="hamburgerMenuBar" />
+				<span className="hamburgerMenuBar" />
+			</button>
+			{children}
+		</div>
+	);
+}

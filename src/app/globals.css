@@ -74,6 +74,9 @@ h2 {
   font-size: var(--text-6xl);
   line-height: var(--tw-leading, var(--text-6xl--line-height));
 }
+*, html {
+  scroll-behavior: smooth;
+}
 
 @layer components {
   .skillsCard {
@@ -187,7 +190,7 @@ h2 {
     transition: color 0.25s ease;
     outline: none;
 
-    &:is(:hover, :focus-within) {
+    &:is(:hover, :focus-within,:active) {
       @media (hover: hover) {
         color: var(--color-bg-dark);
       }
@@ -252,6 +255,78 @@ h2 {
 
     a {
       width: 100%;
+    }
+  }
+  .hamburgerMenuBar {
+    position: absolute;
+		background: var(--color-bg-dark);
+		width: 60%;
+		height: 0.2rem;
+		border-radius: 0.1rem;
+		left: 20%;
+    transition: all 0.25s ease;
+
+    &:where([data-theme=dark], [data-theme=dark] *) {
+      background: var(--color-bg-light);
+
+      &:is(:where(.group):focus *, :where(.group):active *) {
+        background: var(--color-clouds-three-light);
+      }
+    }
+
+    &:is(:where(.group):focus *, :where(.group):active *) {
+      background: var(--color-clouds-three-dark);
+    }
+    
+    &:nth-of-type(1) {
+      top: 25%;
+      transform: rotate(0deg);
+
+      &.open {
+        top: 50%;
+        transform: rotate(45deg);
+      }
+    }
+    &:nth-of-type(2) {
+      top: 50%;
+      transform: rotate(0deg);
+
+      &.open {
+        top: 50%;
+        transform: rotate(45deg);
+      }
+    }
+    &:nth-of-type(3) {
+      top: 75%;
+      transform: rotate(0deg);
+
+      &.open {
+        top: 50%;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  .mobileNav {
+    position:fixed;
+    display: inline-block;
+    width:100%;
+    transition: all 0.25s ease;
+    max-height: 0;
+    overflow: hidden;
+
+    background-color: #6BA6E6CC;
+    backdrop-filter: blur(10px);
+    border-top: 1px solid #ffffff24;
+    border-bottom: 1px solid #ffffff24;
+
+
+    &.open {
+      max-height: calc(var(--spacing) * 50);
+    }
+
+    &:where([data-theme=dark], [data-theme=dark] *) {
+      background: #465EA4CC;
+      
     }
   }
 }
