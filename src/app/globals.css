@@ -71,11 +71,18 @@ h3,h4,h5 {
   letter-spacing:var(--tracking-mono-tight);
 }
 h2 {
-  font-size: var(--text-6xl);
-  line-height: var(--tw-leading, var(--text-6xl--line-height));
+  font-size: var(--text-5xl);
+  line-height: var(--tw-leading, var(--text-5xl--line-height));
 }
 *, html {
   scroll-behavior: smooth;
+}
+
+@media (width >= 48rem) {
+  h2 {
+    font-size: var(--text-6xl);
+    line-height: var(--tw-leading, var(--text-6xl--line-height));
+  }
 }
 
 @layer components {
@@ -321,7 +328,7 @@ h2 {
 
 
     &.open {
-      max-height: calc(var(--spacing) * 50);
+      max-height: calc(var(--spacing) * 60);
     }
 
     &:where([data-theme=dark], [data-theme=dark] *) {
