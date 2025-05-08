@@ -8,7 +8,7 @@ export default function Portrait() {
 		<div className="relative flex">
 			<div className="relative h-64 w-64 p-4">
 				<Image
-					src="/Smee.jpg"
+					src="/smee.jpg"
 					alt="A self portrait of Kieran Lawrence"
 					className="rounded-[50%] grayscale-50"
 					fill={true}
