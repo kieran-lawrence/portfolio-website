@@ -48,7 +48,7 @@ const NavItems = ({ onClick }: { onClick?: MouseEventHandler<HTMLAnchorElement> 
 		<>
 			<li className="headNavItem">
 				<Link
-					href="#intro"
+					href="/#intro"
 					className="active:text-bg-dark dark:active:text-bg-light outline-0"
 					onClick={onClick}
 				>
@@ -57,7 +57,7 @@ const NavItems = ({ onClick }: { onClick?: MouseEventHandler<HTMLAnchorElement> 
 			</li>
 			<li className="headNavItem">
 				<Link
-					href="#resume"
+					href="/#resume"
 					className="active:text-bg-dark dark:active:text-bg-light outline-0"
 					onClick={onClick}
 				>
@@ -65,13 +65,13 @@ const NavItems = ({ onClick }: { onClick?: MouseEventHandler<HTMLAnchorElement> 
 				</Link>
 			</li>
 			<li className="headNavItem">
-				<Link href="#education" className="outline-0">
+				<Link href="/#education" className="outline-0">
 					Education
 				</Link>
 			</li>
 			<li className="headNavItem">
 				<Link
-					href="#portfolio"
+					href="/#portfolio"
 					className="active:text-bg-dark dark:active:text-bg-light outline-0"
 					onClick={onClick}
 				>

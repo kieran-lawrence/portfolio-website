@@ -336,4 +336,10 @@ h2 {
       
     }
   }
+  .carouselImageContainer {
+    display:none;
+    &.visible {
+      display:block;
+    }
+  }
 }
