@@ -38,7 +38,7 @@ export default function ChevronButton({ direction, images }: ChevronButtonProps)
 	return (
 		<button
 			type="button"
-			className={`${direction === 'forward' ? 'start-0' : 'end-0'} group absolute top-0 z-30 flex h-full cursor-pointer items-center justify-center px-0 focus:outline-none md:px-4`}
+			className={`${direction === 'forward' ? 'start-0' : 'end-0'} group absolute top-0 z-30 flex h-full cursor-pointer items-center justify-center px-4 focus:outline-none`}
 			onClick={handleClick}
 		>
 			<span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70">
