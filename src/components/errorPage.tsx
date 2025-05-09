@@ -8,9 +8,9 @@ type ErrorPageProps = {
 };
 export default function ErrorPage({ errorCode, errorMessage }: ErrorPageProps) {
 	return (
-		<main className="flex h-[100vh] flex-col items-center justify-center transition duration-250">
+		<main className="flex h-[100vh] flex-col items-center justify-center">
 			<CloudsBackgroundTop />
-			<div className="bg-bg-light dark:bg-bg-dark flex w-full flex-col items-center justify-center gap-4 py-4 transition duration-250">
+			<div className="bg-bg-light dark:bg-bg-dark flex w-full flex-col items-center justify-center gap-4 py-4">
 				<h1 className="py-4 text-6xl md:text-8xl">Ruh Roh!</h1>
 				<h2 className="w-3/4">
 					Right now you&apos;re probably wondering, how did I end up here?

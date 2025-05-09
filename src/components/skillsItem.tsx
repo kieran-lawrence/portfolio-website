@@ -9,7 +9,7 @@ export default function SkillsItem({
 	kind = 'tools',
 }: PropsWithChildren<SkillsItemProps>) {
 	return (
-		<div className="border-text-light dark:border-text-dark col-span-2 row-start-2 box-border flex h-full w-full flex-col items-center justify-center gap-4 rounded-lg border-2 p-4 transition duration-250 last:row-start-3">
+		<div className="border-text-light dark:border-text-dark col-span-2 row-start-2 box-border flex h-full w-full flex-col items-center justify-center gap-4 rounded-lg border-2 p-4 last:row-start-3">
 			<div className="fill:aws-icon flex items-center justify-center gap-4">
 				{children}
 				<h4 className="tracking-tightest text-2xl font-bold">{headerText}</h4>

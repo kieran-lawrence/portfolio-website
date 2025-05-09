@@ -7,7 +7,7 @@ import Resume from '@/components/resume';
 
 export default function Home() {
 	return (
-		<main className="flex flex-col items-center justify-center transition duration-250">
+		<main className="flex flex-col items-center justify-center">
 			<div
 				id="intro"
 				className="mt-32 flex w-screen flex-col items-center justify-center gap-4 md:mt-40 md:gap-8"
@@ -20,7 +20,7 @@ export default function Home() {
 				<Portrait />
 			</div>
 			<CloudsBackgroundTop />
-			<div className="bg-bg-light dark:bg-bg-dark flex w-full flex-col gap-16 py-8 transition duration-250">
+			<div className="bg-bg-light dark:bg-bg-dark flex w-full flex-col gap-16 py-8">
 				<Resume />
 				<Education />
 				<Portfolio />

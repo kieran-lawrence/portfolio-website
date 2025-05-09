@@ -194,7 +194,6 @@ h2 {
     }    
   }
   .headNavItem {
-    transition: color 0.25s ease;
     outline: none;
 
     &:is(:hover, :focus-within,:active) {
@@ -229,7 +228,7 @@ h2 {
     bottom: 0;
     background-color: var(--color-clouds-two-light);
     border-radius: var(--radius-3xl);
-    transition: all 0.25s ease;
+    transition: outline 0.25s ease;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -250,7 +249,7 @@ h2 {
       bottom: var(--spacing);
       background-color: var(--color-text-dark);
       border-radius: 50%;
-      transition: all 0.3s ease-in-out;
+      transition: all 0.25s ease-in-out;
     }
   }
   .resumeLinkIcons {
@@ -317,7 +316,7 @@ h2 {
     position:fixed;
     display: inline-block;
     width:100%;
-    transition: all 0.25s ease;
+    transition: max-height 0.25s ease;
     max-height: 0;
     overflow: hidden;
 
