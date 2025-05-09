@@ -12,7 +12,7 @@ export default function PortfolioCard({ cardTitle, cardDescription, skills }: Po
 						? 'portfolioItemLink horizontal'
 						: 'portfolioItemLink'
 				}
-				href={cardTitle === 'coming-soon' ? '#portfolio' : `/portfolio/${cardTitle}/#intro`}
+				href={cardTitle === 'coming-soon' ? '#portfolio' : `/portfolio/${cardTitle}`}
 			>
 				<div
 					className={

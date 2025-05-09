@@ -23,10 +23,7 @@ export default async function PortfolioItem({ params }: RouteProps) {
 	return (
 		<main className="mt-32 flex h-full flex-col items-center justify-center md:mt-48">
 			<CloudsBackgroundTop />
-			<div
-				id="intro"
-				className="bg-bg-light dark:bg-bg-dark flex w-full flex-col items-center justify-center gap-4 py-4"
-			>
+			<div className="bg-bg-light dark:bg-bg-dark flex w-full flex-col items-center justify-center gap-4 py-4">
 				<h1 className="mt-0 py-4 text-6xl capitalize md:mt-32 md:text-8xl">
 					{formattedName}
 				</h1>
