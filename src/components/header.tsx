@@ -18,7 +18,7 @@ export default function SiteHeader() {
 		mobileNav?.classList.remove('open');
 	};
 	return (
-		<header className="fixed top-0 z-10 w-full">
+		<header className="fixed top-0 z-10 w-full print:hidden">
 			<div className="bg-bg-light-gradient-from dark:bg-bg-dark-gradient-from z-10 flex items-center justify-center md:top-8 md:m-8 md:border-none md:bg-transparent dark:md:bg-transparent">
 				<div className="animatedHeader hidden w-[100vw] justify-between rounded-2xl p-4 md:flex md:w-[80vw] md:px-8 md:py-4">
 					<nav className="flex items-center">

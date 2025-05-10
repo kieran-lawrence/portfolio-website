@@ -73,6 +73,11 @@ h3,h4,h5 {
 h2 {
   font-size: var(--text-5xl);
   line-height: var(--tw-leading, var(--text-5xl--line-height));
+
+  @media print {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
 }
 *, html {
   scroll-behavior: smooth;

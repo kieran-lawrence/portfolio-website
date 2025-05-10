@@ -1,6 +1,6 @@
 export default function CloudsBackgroundBottom() {
 	return (
-		<div className="relative h-[8.5rem] w-screen 2xl:h-[17rem]">
+		<div className="relative h-[8.5rem] w-screen 2xl:h-[17rem] print:hidden">
 			<div className="absolute top-0 left-0 -z-10 h-[8.5rem] w-screen overflow-hidden 2xl:h-[17rem]">
 				<svg
 					width="100%"
