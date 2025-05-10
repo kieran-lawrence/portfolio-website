@@ -30,6 +30,7 @@ export default function PortfolioCard({ cardTitle, cardDescription, skills }: Po
 						src={`/${cardTitle}.png`}
 						alt={formattedTitle}
 						fill={true}
+						sizes="(max-width: 768px) 100vw, 50vw"
 					/>
 				</div>
 				<div className="flex h-[50%] flex-col items-center justify-center gap-4 px-4 text-justify">
