@@ -4,7 +4,7 @@ export default function Education() {
 	return (
 		<div id="education" className="flex w-full flex-col items-center justify-center gap-4">
 			<h2>Education</h2>
-			<div className="grid w-[90vw] max-w-[80rem] grid-cols-1 place-items-center gap-8 md:w-[65vw] md:grid-cols-2">
+			<div className="grid w-full max-w-[80rem] grid-cols-1 place-items-center gap-8 px-8 md:w-[65vw] md:grid-cols-2">
 				<EducationCard
 					title="Bachelor of Information Technology"
 					provider="Murdoch University"
@@ -22,7 +22,7 @@ export default function Education() {
 				</EducationCard>
 				<EducationCard
 					title="AWS Certified Developer - Associate"
-					provider="Cloud Guru"
+					provider="A Cloud Guru"
 					dateCompleted="Est. Dec 2025"
 				>
 					<ul className="resumeInfoList">

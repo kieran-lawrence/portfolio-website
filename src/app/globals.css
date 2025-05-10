@@ -115,10 +115,13 @@ h2 {
     gap: calc(var(--spacing) * 8);
     justify-content: center;
     height: 100%;
-    width: 90vw;
+    width: 100%;
     max-width: 85rem;
+    padding-inline: calc(var(--spacing) * 8);
+    
 
     @media (width >= 48rem) {
+      padding-inline: 0;
       display: grid;
       width: 65vw;
       grid-template-columns: minmax(0, 1fr) minmax(0, 50px) minmax(0, 50px) minmax(0, 1fr);
