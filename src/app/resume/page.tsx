@@ -27,14 +27,14 @@ export default async function ResumePage() {
 					name="description"
 					content="The professional resume of Kieran Lawrence, a full-stack software developer specialising in React, infrastructure as code, and web development."
 				/>
+			</Head>
+			<main className="box-border flex h-full flex-col items-center justify-center pt-12 md:pt-24 print:bg-white print:p-3">
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{
 						__html: JSON.stringify(jsonLd).replace(/</g, '\\u003c'),
 					}}
 				/>
-			</Head>
-			<main className="box-border flex h-full flex-col items-center justify-center pt-12 md:pt-24 print:bg-white print:p-3">
 				<CloudsBackgroundTop />
 				<div className="print:text-text-light bg-bg-light dark:bg-bg-dark flex w-full flex-col items-center justify-center gap-6 px-8 pb-4 print:gap-2 print:bg-white print:p-0">
 					<h1 className="text-6xl md:text-8xl print:text-2xl">Resume</h1>
