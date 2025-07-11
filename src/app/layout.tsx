@@ -8,6 +8,11 @@ const coinyFont = Coiny({ variable: '--font-primary', subsets: ['latin'], weight
 export const metadata: Metadata = {
 	title: 'Kieran Lawrence | Software Developer',
 	description: 'Developer portfolio for Kieran Lawrence | Perth WA | Software Developer',
+	openGraph: {
+		title: 'Code By Kieran',
+		description:
+			'Welcome to Code by Kieran. The Developer Portfolio for Kieran Lawrence showcasing my resume and projects.',
+	},
 };
 export const viewport: Viewport = { themeColor: '#6BA6E6', width: 'device-width', initialScale: 1 };
 

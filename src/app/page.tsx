@@ -6,8 +6,26 @@ import Portrait from '@/components/portrait';
 import Resume from '@/components/resume';
 
 export default function Home() {
+	const jsonLd = {
+		'@context': 'https://schema.org',
+		'@type': 'Person',
+		name: 'Kieran Lawrence',
+		jobTitle: 'Software Developer',
+		url: 'https://codebykieran.com',
+		sameAs: [
+			'https://linkedin.com/in/kieran-lawrence-892027202',
+			'https://github.com/kieran-lawrence',
+		],
+	};
+
 	return (
 		<main className="flex flex-col items-center justify-center">
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{
+					__html: JSON.stringify(jsonLd).replace(/</g, '\\u003c'),
+				}}
+			/>
 			<div
 				id="intro"
 				className="mt-32 flex w-screen flex-col items-center justify-center gap-4 md:mt-40 md:gap-8"
