@@ -16,7 +16,7 @@ export default function PortfolioCard({ cardTitle, cardDescription, skills }: Po
 				href={
 					nonAccessibleTitles.includes(cardTitle)
 						? '#portfolio'
-						: `/portfolio/${cardTitle}`
+						: `/portfolio/${cardTitle}#portfolio-title`
 				}
 			>
 				<div

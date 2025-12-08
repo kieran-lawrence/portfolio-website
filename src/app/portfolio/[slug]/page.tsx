@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { promises as fs } from 'fs';
 import path from 'path';
 import ChevronButton from '@/components/chevronButton';
+import IconGithub from '@/components/icons/iconGithub';
 
 type RouteProps = { params: Promise<{ slug: string }> };
 
@@ -23,7 +24,10 @@ export default async function PortfolioItem({ params }: RouteProps) {
 		<main className="mt-32 flex h-full flex-col items-center justify-center md:mt-48">
 			<CloudsBackgroundTop />
 			<div className="bg-bg-light dark:bg-bg-dark flex w-full flex-col items-center justify-center gap-4 py-4">
-				<h1 className="mt-0 py-4 text-6xl capitalize md:mt-32 md:text-8xl">
+				<h1
+					className="mt-0 gap-8 pt-32 pb-4 text-6xl capitalize md:text-8xl"
+					id="portfolio-title"
+				>
 					{formattedName}
 				</h1>
 				<ul className="flex flex-col items-center justify-center gap-2 px-8 py-4 text-lg md:text-xl">
@@ -38,7 +42,7 @@ export default async function PortfolioItem({ params }: RouteProps) {
 				<div className="relative grid w-full grid-cols-[0.5fr_4fr_4fr_0.5fr] items-center justify-center px-5 md:w-2/3 2xl:w-1/2">
 					<ChevronButton direction="forward" images={imageFilenames} />
 					{/* Image Container */}
-					<div className="col-span-4 aspect-[4/3] overflow-hidden md:col-span-2 md:col-start-2">
+					<div className="col-span-4 overflow-hidden md:col-span-2 md:col-start-2">
 						{imageFilenames.map((filename, i) => (
 							<div
 								id={`image-${filename.split('.')[0]}`}
@@ -57,6 +61,20 @@ export default async function PortfolioItem({ params }: RouteProps) {
 						))}
 					</div>
 					<ChevronButton direction="backward" images={imageFilenames} />
+				</div>
+				<div className="group flex w-full justify-center text-lg md:text-xl">
+					<a
+						className="flex items-center justify-center gap-2"
+						href={`https://github.com/kieran-lawrence/${projectName}`}
+						target="_blank"
+					>
+						<span className="group-hover:text-bg-dark dark:group-hover:text-bg-light">
+							View the project on GitHub
+						</span>
+						<span className="h-6 w-6">
+							<IconGithub />
+						</span>
+					</a>
 				</div>
 			</div>
 			<CloudsBackgroundBottom />

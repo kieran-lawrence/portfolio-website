@@ -30,7 +30,7 @@ export default function Home() {
 				id="intro"
 				className="mt-32 flex w-screen flex-col items-center justify-center gap-4 md:mt-40 md:gap-8"
 			>
-				<h1 className="text-6xl md:text-8xl">Hi, I&apos;m Kieran.</h1>
+				<h1 className="pt-24 text-6xl md:text-8xl">Hi, I&apos;m Kieran.</h1>
 				<h3 className="w-3/4 text-center text-lg md:w-1/2 md:text-xl 2xl:w-1/4">
 					an Australian-based software developer driven by a passion for creating cool and
 					meaningful technology

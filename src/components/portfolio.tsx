@@ -5,7 +5,10 @@ export default async function Portfolio() {
 	const portfolioData: GitHubResponseType[] | undefined = await getRepositories();
 
 	return (
-		<div id="portfolio" className="flex w-full flex-col items-center justify-center gap-4">
+		<div
+			id="portfolio"
+			className="flex w-full flex-col items-center justify-center gap-4 pt-24"
+		>
 			<h2>Portfolio</h2>
 			<ul className="portfolioGrid">
 				{portfolioData &&
