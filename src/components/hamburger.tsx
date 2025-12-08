@@ -1,6 +1,6 @@
 'use client';
 
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, useCallback, useEffect } from 'react';
 
 type HamburgerProps = {
 	isOpen: boolean;
@@ -11,9 +11,7 @@ export default function Hamburger({
 	isOpen,
 	setIsOpen,
 }: PropsWithChildren<HamburgerProps>) {
-	// Override the theme when toggling the theme slider
-	const handleToggleClick = () => {
-		setIsOpen(!isOpen);
+	useEffect(() => {
 		const hamburgerMenuBar = document.querySelectorAll('.hamburgerMenuBar');
 		const mobileNav = document.querySelector('.mobileNav');
 		if (isOpen) {
@@ -27,7 +25,12 @@ export default function Hamburger({
 			});
 			mobileNav?.classList.remove('open');
 		}
-	};
+	}, [isOpen]);
+
+	const handleToggleClick = useCallback(() => {
+		setIsOpen(!isOpen);
+	}, [isOpen, setIsOpen]);
+
 	return (
 		<div className="relative flex w-full items-center justify-between px-4 py-2 md:hidden">
 			<button

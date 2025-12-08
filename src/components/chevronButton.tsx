@@ -12,13 +12,13 @@ export default function ChevronButton({ direction, images }: ChevronButtonProps)
 
 	const handleClick = () => {
 		// Update the image index based on the direction
-		setImgIndex((prevIndex) => {
-			if (direction === 'forward') {
-				return (prevIndex - 1 + images.length) % images.length;
-			} else {
-				return (prevIndex + 1) % images.length;
-			}
-		});
+		let newIndex;
+		if (direction === 'forward') {
+			newIndex = (imgIndex - 1 + images.length) % images.length;
+		} else {
+			newIndex = (imgIndex + 1) % images.length;
+		}
+		setImgIndex(newIndex);
 
 		images.forEach((img) => {
 			const currImage = parseInt(img.split('.')[0]);
@@ -28,7 +28,7 @@ export default function ChevronButton({ direction, images }: ChevronButtonProps)
 			if (!imageElement) return;
 
 			// If the image index matches the current image, add the visible class
-			if (imgIndex === currImage) {
+			if (newIndex === currImage) {
 				imageElement.classList.add('visible');
 			} else {
 				imageElement.classList.remove('visible');

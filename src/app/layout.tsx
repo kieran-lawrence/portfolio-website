@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 			'Welcome to Code by Kieran. The Developer Portfolio for Kieran Lawrence showcasing my resume and projects.',
 	},
 };
-export const viewport: Viewport = { themeColor: '#6BA6E6', width: 'device-width', initialScale: 1 };
+export const viewport: Viewport = { themeColor: '#458CD8', width: 'device-width', initialScale: 1 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
 	return (

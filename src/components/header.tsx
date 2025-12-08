@@ -68,6 +68,7 @@ const NavItems = ({ onClick }: { onClick?: MouseEventHandler<HTMLAnchorElement> 
 				<Link
 					href="/#education"
 					className="active:text-bg-dark dark:active:text-bg-light flex h-full outline-0"
+					onClick={onClick}
 				>
 					Education
 				</Link>

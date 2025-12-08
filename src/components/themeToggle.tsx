@@ -5,25 +5,38 @@ import IconSun from './icons/iconSun';
 import IconMoon from './icons/iconMoon';
 
 export default function ThemeToggle() {
-	const [isDark, setIsDark] = useState(false);
+	const [isDark, setIsDark] = useState(() => {
+		if (typeof window !== 'undefined') {
+			return localStorage.getItem('theme') === 'dark';
+		}
+		return false;
+	});
 	// Set the initial theme based on the user's system preference
 	useEffect(() => {
-		if (document && typeof window !== 'undefined') {
-			const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-			if (systemTheme) {
-				document.body.dataset.theme = 'dark';
-				setIsDark(true);
+		if (typeof window !== 'undefined') {
+			const storedTheme = localStorage.getItem('theme');
+			if (storedTheme) {
+				document.body.dataset.theme = storedTheme;
+				setIsDark(storedTheme === 'dark');
 			} else {
-				setIsDark(false);
+				const systemDarkModeEnabled = window.matchMedia(
+					'(prefers-color-scheme: dark)',
+				).matches;
+				const theme = systemDarkModeEnabled ? 'dark' : 'light';
+				document.body.dataset.theme = theme;
+				setIsDark(systemDarkModeEnabled);
+				localStorage.setItem('theme', theme);
 			}
 		}
 	}, []);
 	// Override the theme when toggling the theme slider
 	const handleToggleClick = () => {
-		if (document) {
+		if (typeof window !== 'undefined') {
 			const { dataset } = document.body;
-			dataset.theme = isDark ? 'light' : 'dark';
+			const newTheme = isDark ? 'light' : 'dark';
+			dataset.theme = newTheme;
 			setIsDark((prev) => !prev);
+			localStorage.setItem('theme', newTheme);
 		}
 	};
 
