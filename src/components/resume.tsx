@@ -19,6 +19,12 @@ export default function Resume() {
 							interactive elements and dynamic content
 						</li>
 						<li>
+							Build cross-platform apps using{' '}
+							<b className="capitalised">React Native</b> and bridge native SDKs via{' '}
+							<b className="capitalised">Nitro Modules</b> using{' '}
+							<b className="capitalised">Swift & Kotlin</b>
+						</li>
+						<li>
 							Integrate <b>back-end</b> systems,&nbsp;
 							<b>databases</b>, and&nbsp;
 							<b className="capitalised">APIs</b> to support website functionality
@@ -105,6 +111,7 @@ export default function Resume() {
 					headerText="Frameworks"
 					skillItems={[
 						'Express',
+						'Expo',
 						'NestJS',
 						'Next.js',
 						'React',

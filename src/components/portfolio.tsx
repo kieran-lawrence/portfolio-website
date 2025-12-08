@@ -19,17 +19,10 @@ export default async function Portfolio() {
 					))}
 				<PortfolioCard
 					cardDescription={
-						'A React Native app for effortlessly tracking your personal book collection, discovering new reads, and celebrating your reading journey with meaningful milestones'
+						'A React Native app for managing your personal finances and budgeting needs on the go. \nI plan to release this to the app stores in early 2027.'
 					}
-					cardTitle={'coming-soon'}
-					skills={['React Native', 'Fastlane', 'GitHub CI/CD']}
-				/>
-				<PortfolioCard
-					cardDescription={
-						'An AWS based serverless API for the management of comments for my news app, Bulletin'
-					}
-					cardTitle={'coming-soon'}
-					skills={['AWS', 'Pulumi']}
+					cardTitle={'on-budget'}
+					skills={['React Native', 'Expo', 'Fastlane', 'GitHub CI/CD']}
 				/>
 			</ul>
 		</div>

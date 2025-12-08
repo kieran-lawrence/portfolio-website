@@ -2,46 +2,38 @@ import EducationCard from './educationCard';
 
 export default function Education() {
 	return (
-		<div id="education" className="flex w-full flex-col items-center justify-center gap-4">
+		<div id="education" className="flex w-full flex-col items-center justify-center gap-4 px-8">
 			<h2>Education</h2>
-			<div className="grid w-full max-w-[80rem] grid-cols-1 place-items-center gap-8 px-8 md:w-[65vw] md:grid-cols-2">
-				<EducationCard
-					title="Bachelor of Information Technology"
-					provider="Murdoch University"
-					dateCompleted="2025 - Present"
-				>
-					<ul className="resumeInfoList w-full gap-0.5 p-0">
-						<h6 className="text-[1.1rem] font-bold capitalize">Majors:</h6>
-						<li className="capitalised ml-4">Computer Science</li>
-						<li className="capitalised ml-4">Web & Mobile Application Development</li>
-						<h6 className="mt-1 text-[1.1rem] font-bold capitalize">Minors:</h6>
-						<li className="capitalised ml-4">
-							Artificial Intelligence and Autonomous Systems
+			<div className="grid w-full max-w-[80rem] grid-cols-1 place-items-center gap-8 md:w-[65vw] md:grid-cols-2">
+				<EducationCard title="Diploma of Software Development" provider="South Metro TAFE">
+					<ul className="resumeInfoList">
+						<li>
+							Completed a Certificate IV in Programming, which sparked my interest in
+							software development, so I went on to complete this Diploma to further
+							my programming abilities with the goal of kicking off my career in tech.
+						</li>
+						<li>
+							My areas of focus included Web & Mobile Application Development,
+							Object-oriented programming and Software Engineering Principles.
 						</li>
 					</ul>
 				</EducationCard>
 				<EducationCard
-					title="AWS Certified Developer - Associate"
-					provider="A Cloud Guru"
-					dateCompleted="Est. Dec 2025"
+					title="Microsoft Azure Fundamentals"
+					provider="Microsoft Learn"
+					dateCompleted="May 2022"
 				>
 					<ul className="resumeInfoList">
 						<li>
-							Furthering my expertise with <b className="capitalised">AWS</b> services{' '}
-							such as <b className="capitalised">Lambda</b>,{' '}
-							<b className="capitalised">DynamoDB</b>,{' '}
-							<b className="capitalised">API Gateway</b>, and{' '}
-							<b className="capitalised">S3</b>
+							Explored the range of services provided by{' '}
+							<b className="capitalised">Microsoft Azure</b>, including compute,
+							storage, networking, and databases
 						</li>
 						<li>
-							Using monthly Professional Development days to enhance my skills and{' '}
-							stay current with industry practices
-						</li>
-						<li>
-							Building knowledge in <b className="capitalised">monitoring</b>,{' '}
-							<b className="capitalised">security</b>, and{' '}
-							<b className="capitalised">application lifecycle management</b> within{' '}
-							<b className="capitalised">AWS</b>
+							Gained an understanding of the fundamentals of cloud computing concepts
+							and core services offered by{' '}
+							<b className="capitalised">Microsoft Azure</b> and how they can be
+							utilised to solve business challenges
 						</li>
 					</ul>
 				</EducationCard>

@@ -78,6 +78,10 @@ const projectDescriptions: Record<string, string[]> = {
 		'One of my key goals with Quill is to implement real-time messaging using WebSockets — this is currently a work in progress, and will be the core of how messages are delivered instantly across clients.',
 		'So far, the backend supports features like user registration, authentication, and basic messaging logic. The groundwork is also laid for file uploads and session management via cookies. I’ve included a robust setup using environment variables to make deployment and local development flexible.',
 	],
+	comments: [
+		'This project is an AWS-based serverless API designed to manage comments for my news application, Bulletin. The API is built in a docker container hosted in ECS and deployed to Cloudfront to provide a scalable and efficient solution for handling user comments.',
+		'It features a fully functional admin dashboard that allows for easy moderation and management of comments. The dashboard is secured with authentication via Auth0 to ensure that only authorised users can access it.',
+	],
 };
 
 export type GitHubResponseType = {

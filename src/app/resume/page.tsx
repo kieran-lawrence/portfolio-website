@@ -163,12 +163,10 @@ export default async function ResumePage() {
 						</h3>
 						<ul className="print:text-sm">
 							<li>
-								<strong>Bachelor of Information Technology</strong> - Murdoch
-								University (2025 - Present)
+								<strong>Diploma of Software Development</strong> - South Metro TAFE
 							</li>
 							<li>
-								<strong>AWS Certified Developer - Associate</strong> - A Cloud Guru
-								(Expected Dec 2025)
+								<strong>Microsoft Azure Fundamentals</strong> - Microsoft Learn
 							</li>
 						</ul>
 					</section>

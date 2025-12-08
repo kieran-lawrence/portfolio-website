@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+const nonAccessibleTitles = ['coming-soon', 'on-budget'];
 type PortfolioCardProps = { cardTitle: string; cardDescription: string; skills: string[] };
 export default function PortfolioCard({ cardTitle, cardDescription, skills }: PortfolioCardProps) {
 	const formattedTitle = cardTitle.replaceAll('-', ' ');
@@ -12,7 +13,11 @@ export default function PortfolioCard({ cardTitle, cardDescription, skills }: Po
 						? 'portfolioItemLink horizontal'
 						: 'portfolioItemLink'
 				}
-				href={cardTitle === 'coming-soon' ? '#portfolio' : `/portfolio/${cardTitle}`}
+				href={
+					nonAccessibleTitles.includes(cardTitle)
+						? '#portfolio'
+						: `/portfolio/${cardTitle}`
+				}
 			>
 				<div
 					className={
