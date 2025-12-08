@@ -4,7 +4,6 @@ import CloudsBackgroundTop from '@/components/icons/cloudsBackgroundTop';
 import { notFound } from 'next/navigation';
 import { promises as fs } from 'fs';
 import path from 'path';
-import Image from 'next/image';
 import ChevronButton from '@/components/chevronButton';
 
 type RouteProps = { params: Promise<{ slug: string }> };
@@ -36,29 +35,27 @@ export default async function PortfolioItem({ params }: RouteProps) {
 				</ul>
 				<h2>Gallery</h2>
 				{/* Carousel */}
-				<div className="relative flex w-full items-center justify-center px-5 md:w-2/3 2xl:w-1/2">
+				<div className="relative grid w-full grid-cols-[0.5fr_4fr_4fr_0.5fr] items-center justify-center px-5 md:w-2/3 2xl:w-1/2">
+					<ChevronButton direction="forward" images={imageFilenames} />
 					{/* Image Container */}
-					<div className="relative aspect-[4/3] w-10/12 overflow-hidden">
+					<div className="col-span-4 aspect-[4/3] overflow-hidden md:col-span-2 md:col-start-2">
 						{imageFilenames.map((filename, i) => (
 							<div
 								id={`image-${filename.split('.')[0]}`}
 								key={`image-${filename}`}
 								className={`${i === 0 ? 'visible' : ''} carouselImageContainer transition duration-700 ease-in-out`}
 							>
-								<Image
+								{/* eslint-disable-next-line @next/next/no-img-element */}
+								<img
 									key={filename}
 									src={`/${projectName}/${filename}`}
 									alt={filename}
-									width={1400}
-									height={1050}
-									className="absolute top-1/2 left-1/2 block h-full w-full -translate-x-1/2 -translate-y-1/2 object-fill"
+									className="h-full w-full object-fill"
 									loading="eager"
 								/>
 							</div>
 						))}
 					</div>
-					{/* Carousel Forward / Back Buttons */}
-					<ChevronButton direction="forward" images={imageFilenames} />
 					<ChevronButton direction="backward" images={imageFilenames} />
 				</div>
 			</div>

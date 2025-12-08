@@ -33,6 +33,7 @@
   --font-mono: 'Andale Mono', monospace;
 
   --radius-mlg: 0.35rem;
+  --text-lg--line-height: 1.5rem;
 
   @keyframes header-bg-scroll-light {
     from {
