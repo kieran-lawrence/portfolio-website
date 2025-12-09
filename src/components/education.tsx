@@ -7,7 +7,7 @@ export default function Education() {
 			className="flex w-full flex-col items-center justify-center gap-4 px-8 pt-24"
 		>
 			<h2>Education</h2>
-			<div className="grid w-full max-w-[80rem] grid-cols-1 place-items-center gap-8 md:w-[65vw] md:grid-cols-2">
+			<div className="grid w-full max-w-[80rem] grid-cols-1 place-items-center gap-8 lg:w-[65vw] lg:grid-cols-2">
 				<EducationCard title="Diploma of Software Development" provider="South Metro TAFE">
 					<ul className="resumeInfoList">
 						<li>

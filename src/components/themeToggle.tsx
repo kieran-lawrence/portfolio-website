@@ -5,13 +5,8 @@ import IconSun from './icons/iconSun';
 import IconMoon from './icons/iconMoon';
 
 export default function ThemeToggle() {
-	const [isDark, setIsDark] = useState(() => {
-		if (typeof window !== 'undefined') {
-			return localStorage.getItem('theme') === 'dark';
-		}
-		return false;
-	});
-	// Set the initial theme based on the user's system preference
+	const [isDark, setIsDark] = useState(false);
+
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
 			const storedTheme = localStorage.getItem('theme');
@@ -29,14 +24,14 @@ export default function ThemeToggle() {
 			}
 		}
 	}, []);
-	// Override the theme when toggling the theme slider
+
 	const handleToggleClick = () => {
 		if (typeof window !== 'undefined') {
 			const { dataset } = document.body;
 			const newTheme = isDark ? 'light' : 'dark';
 			dataset.theme = newTheme;
-			setIsDark((prev) => !prev);
 			localStorage.setItem('theme', newTheme);
+			setIsDark((prev) => !prev);
 		}
 	};
 

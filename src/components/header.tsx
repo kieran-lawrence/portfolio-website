@@ -3,10 +3,33 @@
 import Link from 'next/link';
 import ThemeToggle from './themeToggle';
 import Hamburger from './hamburger';
-import { MouseEventHandler, useState } from 'react';
+import { MouseEventHandler, useEffect, useRef, useState } from 'react';
 
 export default function SiteHeader() {
 	const [isOpen, setIsOpen] = useState(false);
+	const hamburgerRef = useRef<HTMLDivElement>(null);
+	const mobileNavRef = useRef<HTMLDivElement>(null);
+
+	// Hide hamburger menu when clicking outside (mobile only)
+	useEffect(() => {
+		if (!isOpen) return;
+
+		const handleClickOutside = (event: MouseEvent) => {
+			const target = event.target as Node;
+			if (
+				hamburgerRef.current &&
+				!hamburgerRef.current.contains(target) &&
+				mobileNavRef.current &&
+				!mobileNavRef.current.contains(target)
+			) {
+				setIsOpen(false);
+			}
+		};
+		document.addEventListener('mousedown', handleClickOutside);
+		return () => {
+			document.removeEventListener('mousedown', handleClickOutside);
+		};
+	}, [isOpen]);
 
 	const handleLinkClick = () => {
 		setIsOpen(false);
@@ -28,11 +51,11 @@ export default function SiteHeader() {
 					</nav>
 					<ThemeToggle />
 				</div>
-				<Hamburger isOpen={isOpen} setIsOpen={setIsOpen}>
+				<Hamburger isOpen={isOpen} setIsOpen={setIsOpen} ref={hamburgerRef}>
 					<ThemeToggle />
 				</Hamburger>
 			</div>
-			<div className="mobileNav md:hidden">
+			<div className="mobileNav md:hidden" ref={mobileNavRef}>
 				<nav className="flex items-center p-4">
 					<ul className="flex w-full flex-col gap-6 text-2xl md:gap-8">
 						<NavItems onClick={handleLinkClick} />

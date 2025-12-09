@@ -126,7 +126,7 @@ h2 {
     padding-inline: calc(var(--spacing) * 8);
     
 
-    @media (width >= 48rem) {
+    @media (width >= 64rem) {
       padding-inline: 0;
       display: grid;
       width: 65vw;
@@ -137,7 +137,7 @@ h2 {
     display: flex;
     height: 40rem;
 
-    @media (width >= 48rem) {
+    @media (width >= 64rem) {
       height: 35rem;
     }
 

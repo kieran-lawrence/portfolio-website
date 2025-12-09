@@ -36,7 +36,7 @@ export default async function PortfolioItem({ params }: RouteProps) {
 				</h1>
 				<ul className="flex flex-col items-center justify-center gap-2 px-8 py-4 text-lg md:text-xl">
 					{portfolioData.descriptionBlocks.map((block, index) => (
-						<li key={index} className="w-full text-justify text-lg md:w-2/3 md:text-xl">
+						<li key={index} className="w-full text-justify text-lg md:text-xl lg:w-2/3">
 							{block}
 						</li>
 					))}
