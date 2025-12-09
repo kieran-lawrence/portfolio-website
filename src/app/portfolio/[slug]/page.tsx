@@ -4,8 +4,8 @@ import CloudsBackgroundTop from '@/components/icons/cloudsBackgroundTop';
 import { notFound } from 'next/navigation';
 import { promises as fs } from 'fs';
 import path from 'path';
-import ChevronButton from '@/components/chevronButton';
 import IconGithub from '@/components/icons/iconGithub';
+import { Carousel } from '@/components/carousel';
 
 type RouteProps = { params: Promise<{ slug: string }> };
 
@@ -18,7 +18,11 @@ export default async function PortfolioItem({ params }: RouteProps) {
 		notFound();
 	}
 	const imageDirectory = path.join(process.cwd(), `/public/${projectName}`);
-	const imageFilenames = await fs.readdir(imageDirectory);
+	let imageFilenames = await fs.readdir(imageDirectory);
+	// Filter out non-image files
+	imageFilenames = imageFilenames.filter((filename) =>
+		/\.(jpg|jpeg|png|gif|webp|svg)$/i.test(filename),
+	);
 
 	return (
 		<main className="mt-32 flex h-full flex-col items-center justify-center md:mt-48">
@@ -38,30 +42,7 @@ export default async function PortfolioItem({ params }: RouteProps) {
 					))}
 				</ul>
 				<h2>Gallery</h2>
-				{/* Carousel */}
-				<div className="relative grid w-full grid-cols-[0.5fr_4fr_4fr_0.5fr] items-center justify-center px-5 md:w-2/3 2xl:w-1/2">
-					<ChevronButton direction="forward" images={imageFilenames} />
-					{/* Image Container */}
-					<div className="col-span-4 overflow-hidden md:col-span-2 md:col-start-2">
-						{imageFilenames.map((filename, i) => (
-							<div
-								id={`image-${filename.split('.')[0]}`}
-								key={`image-${filename}`}
-								className={`${i === 0 ? 'visible' : ''} carouselImageContainer transition duration-700 ease-in-out`}
-							>
-								{/* eslint-disable-next-line @next/next/no-img-element */}
-								<img
-									key={filename}
-									src={`/${projectName}/${filename}`}
-									alt={filename}
-									className="h-full w-full object-fill"
-									loading="eager"
-								/>
-							</div>
-						))}
-					</div>
-					<ChevronButton direction="backward" images={imageFilenames} />
-				</div>
+				<Carousel projectName={projectName} imageFilenames={imageFilenames} />
 				<div className="group flex w-full justify-center text-lg md:text-xl">
 					<a
 						className="flex items-center justify-center gap-2"

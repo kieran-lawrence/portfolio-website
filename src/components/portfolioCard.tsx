@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const nonAccessibleTitles = ['coming-soon', 'on-budget'];
+const nonAccessibleTitles = ['coming-soon'];
 type PortfolioCardProps = { cardTitle: string; cardDescription: string; skills: string[] };
 export default function PortfolioCard({ cardTitle, cardDescription, skills }: PortfolioCardProps) {
 	const formattedTitle = cardTitle.replaceAll('-', ' ');

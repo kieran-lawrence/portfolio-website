@@ -7,6 +7,7 @@ export async function getRepositories(): Promise<GitHubResponseType[] | undefine
 		'portfolio-website',
 		'klipit',
 		'my-kanban-app',
+		'on-budget',
 	];
 
 	const res = await fetch('https://api.github.com/users/kieran-lawrence/repos');
@@ -19,7 +20,7 @@ export async function getRepositories(): Promise<GitHubResponseType[] | undefine
 				console.error('Rate limit exceeded. Please try again later.');
 				return;
 			case 401:
-				console.error('Unauthorized. Please check your credentials.');
+				console.error('Unauthorised. Please check your credentials.');
 				return;
 			default:
 				console.error('An error occurred. Please try again later.');
@@ -49,7 +50,7 @@ export async function getRepositoryByName(
 				console.error('Rate limit exceeded. Please try again later.');
 				return;
 			case 401:
-				console.error('Unauthorized. Please check your credentials.');
+				console.error('Unauthorised. Please check your credentials.');
 				return;
 			default:
 				console.error('An error occurred. Please try again later.');
@@ -63,24 +64,26 @@ export async function getRepositoryByName(
 
 const projectDescriptions: Record<string, string[]> = {
 	'bulletin-news': [
-		'Bulletin News is a full-stack news website project developed to enhance my skills and knowledge while working in a media organization. The application is built using modern web technologies, including Next.js for the frontend and NestJS for the backend, with PostgreSQL as the database.',
-		'Key features of the project include user authentication, article creation and management, and comment moderation. Users can register, create publishers, and submit articles through structured JSON payloads. The application also supports various article sections like text, headings, quotes, and images, allowing for rich content formatting.',
-		'The project utilizes the Nx monorepo architecture, organizing the codebase into distinct applications and libraries. It employs TypeScript throughout, enhancing type safety and developer experience. Testing is handled using Jest, and code quality is maintained with ESLint and Prettier.',
-		'While the project is still under development, it showcases a solid architectural foundation and a clear roadmap for future enhancements, such as implementing a frontend interface for article creation.',
+		'Bulletin News is a full-stack news website project built to further my skills and knowledge while working in a media organisation. The front-end is built in Next.js and the backend using NestJS, with PostgreSQL as the database.',
+		'Key features of Bulletin include user authentication, article creation and management, and comment moderation. Users can register, create publishers, and submit articles through JSON payloads, I have started adding an admin panel to allow for these kinds of actions.',
+		'It also supports various article sections like text, headings, quotes, and images, allowing for rich content formatting like you would see on a news website.',
+		'Bulletin utilises the Nx monorepo architecture, organising the codebase into distinct applications and libraries. Testing is handled using Jest, and I set up ESLint and Prettier to maintain code quality.',
+		'While this project is still under development, it showcases a solid architectural foundation and a clear roadmap for future improvements, such as implementing a frontend interface for article creation.',
 	],
 	'improved-obsidian': [
-		'Improved Obsidian is a Minecraft mod I developed to enhance the utility of Obsidian within the game. In vanilla Minecraft, Obsidian has limited applications, primarily for crafting Nether Portals and Ender Chests.',
-		'I aimed to expand its functionality, providing players with more reasons to mine and utilize this robust material.',
-		"The mod is crafted to maintain the vanilla Minecraft experience while introducing these enriched features. It's currently a work in progress, with ongoing efforts to ensure compatibility with Minecraft version 1.21 and support for both Forge and Fabric modding platforms.",
+		'Improved Obsidian is a Minecraft mod I developed to expand the uses for Obsidian within the game. In vanilla Minecraft, Obsidian has limited applications, primarily for crafting Nether Portals and Ender Chests.',
+		'I aimed to expand its functionality, providing players with more reasons to actually use this block in game.',
+		'This mod has been completed in its current form; however, I am actively working to ensure compatibility with the most recent Minecraft versions, additional features and, most importantly, support for both Forge and Fabric modding platforms - which has been requested by several users.',
 	],
 	quill: [
-		"Quill is a full-stack real-time chat application I've been building to explore and implement modern, scalable web architecture. It’s inspired by platforms like Discord and Slack, aiming to support rich, responsive group and private messaging experiences.",
-		'One of my key goals with Quill is to implement real-time messaging using WebSockets — this is currently a work in progress, and will be the core of how messages are delivered instantly across clients.',
-		'So far, the backend supports features like user registration, authentication, and basic messaging logic. The groundwork is also laid for file uploads and session management via cookies. I’ve included a robust setup using environment variables to make deployment and local development flexible.',
+		"Quill is a full-stack real-time chat application I've been building to explore and implement modern, scalable web architecture. It’s inspired by platforms like Discord and Slack, aiming to support immersive group and private messaging experiences.",
+		'One of my goals with Quill was to implement WebSockets which is the primary way in which messages are delivered instantly across multiple clients.',
+		'So far, the backend supports features like user registration, authentication, and messaging logic with support for images as well as plain text messages. I’ve included a in-depth setup guide in the README to make deployment and local development as seamless as possible.',
 	],
 	comments: [
-		'This project is an AWS-based serverless API designed to manage comments for my news application, Bulletin. The API is built in a docker container hosted in ECS and deployed to Cloudfront to provide a scalable and efficient solution for handling user comments.',
+		'This project is an AWS-based serverless API, designed to manage comments for my news application, Bulletin. The API is built in a docker container hosted in ECS and deployed to Cloudfront to provide a scalable and efficient solution for handling user comments.',
 		'It features a fully functional admin dashboard that allows for easy moderation and management of comments. The dashboard is secured with authentication via Auth0 to ensure that only authorised users can access it.',
+		'It has a dedicated component library serving the frontend and any other future consumers, and a docs site built using Starlight to provide clear and comprehensive documentation for potential developers.',
 	],
 };
 
