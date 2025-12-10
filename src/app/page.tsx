@@ -32,8 +32,8 @@ export default function Home() {
 			>
 				<h1 className="text-6xl md:text-8xl">Hi, I&apos;m Kieran.</h1>
 				<h3 className="w-3/4 text-center text-lg md:w-1/2 md:text-xl 2xl:w-1/4">
-					an Australian-based software developer driven by a passion for creating cool and
-					meaningful technology
+					an Australian-based software developer with a focus on building web and mobile
+					applications
 				</h3>
 				<Portrait />
 			</div>

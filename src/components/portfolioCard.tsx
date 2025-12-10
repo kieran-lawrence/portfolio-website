@@ -22,7 +22,7 @@ export default function PortfolioCard({ cardTitle, cardDescription, skills }: Po
 				<div
 					className={
 						formattedTitle.includes('bulletin')
-							? 'border-text-light dark:border-text-dark relative h-[50%] w-full border-r-2 md:h-[100%]'
+							? 'border-text-light dark:border-text-dark relative h-[50%] w-full sm:border-r-0 sm:border-b-2 md:h-[100%] lg:border-r-2 lg:border-b-0'
 							: 'border-text-light dark:border-text-dark relative h-[50%] w-full border-b-2'
 					}
 				>
@@ -40,7 +40,7 @@ export default function PortfolioCard({ cardTitle, cardDescription, skills }: Po
 				</div>
 				<div className="flex h-[50%] flex-col items-center justify-center gap-4 px-4 text-justify">
 					<h4 className="text-2xl font-bold capitalize">{formattedTitle}</h4>
-					<p className="break-keep">{cardDescription}</p>
+					<p className="text-lg break-keep">{cardDescription}</p>
 					<div className="w-full">
 						<ul className="flex flex-wrap justify-center gap-2 font-[500]">
 							{skills.map((skill) => (
