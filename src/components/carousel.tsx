@@ -18,7 +18,7 @@ export const Carousel = ({ projectName, imageFilenames }: CarouselProps) => {
 				setImgIndex={setImgIndex}
 			/>
 			{/* Image Container */}
-			<div className="col-span-4 flex h-auto items-center justify-center overflow-hidden md:col-span-1 md:col-start-2">
+			<div className="col-span-4 flex shrink-0 items-center justify-center overflow-hidden md:col-span-1 md:col-start-2">
 				{imageFilenames.map((filename, i) => (
 					<div
 						id={`image-${filename.split('.')[0]}`}
@@ -30,7 +30,7 @@ export const Carousel = ({ projectName, imageFilenames }: CarouselProps) => {
 							key={filename}
 							src={`/${projectName}/${filename}`}
 							alt={filename}
-							className="max-h-[30rem] w-auto object-contain sm:h-[35rem] md:max-h-[40rem]"
+							className="h-full max-h-[28rem] w-auto object-contain md:max-h-[40rem]"
 							loading="eager"
 						/>
 					</div>

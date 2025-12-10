@@ -11,6 +11,13 @@ export default async function Portfolio() {
 		>
 			<h2>Portfolio</h2>
 			<ul className="portfolioGrid">
+				<PortfolioCard
+					cardDescription={
+						'A React Native app for managing your personal finances and budgeting needs on the go. \nI plan to release this to the app stores in early 2027.'
+					}
+					cardTitle={'on-budget'}
+					skills={['React Native', 'Expo', 'Fastlane', 'GitHub CI/CD']}
+				/>
 				{portfolioData &&
 					portfolioData.map((repo: GitHubResponseType) => (
 						<PortfolioCard
@@ -20,13 +27,6 @@ export default async function Portfolio() {
 							skills={repo.topics}
 						/>
 					))}
-				<PortfolioCard
-					cardDescription={
-						'A React Native app for managing your personal finances and budgeting needs on the go. \nI plan to release this to the app stores in early 2027.'
-					}
-					cardTitle={'on-budget'}
-					skills={['React Native', 'Expo', 'Fastlane', 'GitHub CI/CD']}
-				/>
 			</ul>
 		</div>
 	);

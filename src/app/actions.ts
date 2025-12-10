@@ -10,12 +10,26 @@ export async function getRepositories(): Promise<GitHubResponseType[] | undefine
 		'on-budget',
 	];
 
+	// Sort repositories in a curated order
+	const curatedOrder = ['comments', 'bulletin-news', 'quill', 'improved-obsidian'];
+
 	const res = await fetch('https://api.github.com/users/kieran-lawrence/repos');
 	try {
 		switch (res.status) {
 			case 200:
 				const portfolioData: GitHubResponseType[] = await res.json();
-				return portfolioData.filter((repo) => !ignoreList.includes(repo.name));
+				// Filter out ignored repositories
+				const filtered = portfolioData.filter((repo) => !ignoreList.includes(repo.name));
+				// Sort according to curatedOrder
+				const sorted = filtered.sort((a, b) => {
+					const aIdx = curatedOrder.indexOf(a.name);
+					const bIdx = curatedOrder.indexOf(b.name);
+					if (aIdx === -1 && bIdx === -1) return a.name.localeCompare(b.name);
+					if (aIdx === -1) return 1;
+					if (bIdx === -1) return -1;
+					return aIdx - bIdx;
+				});
+				return sorted;
 			case 403:
 				console.error('Rate limit exceeded. Please try again later.');
 				return;

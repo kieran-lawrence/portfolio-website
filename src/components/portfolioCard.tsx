@@ -22,7 +22,7 @@ export default function PortfolioCard({ cardTitle, cardDescription, skills }: Po
 				<div
 					className={
 						formattedTitle.includes('bulletin')
-							? 'border-text-light dark:border-text-dark relative h-[50%] w-full sm:border-r-0 sm:border-b-2 md:h-[100%] lg:border-r-2 lg:border-b-0'
+							? 'border-text-light dark:border-text-dark relative h-[50%] w-full border-b-2 sm:border-r-0 md:h-[100%] lg:border-r-2 lg:border-b-0'
 							: 'border-text-light dark:border-text-dark relative h-[50%] w-full border-b-2'
 					}
 				>
