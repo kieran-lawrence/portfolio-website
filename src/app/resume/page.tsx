@@ -1,9 +1,12 @@
+'use client';
+
 import CloudsBackgroundBottom from '@/components/icons/cloudsBackgroundBottom';
 import CloudsBackgroundTop from '@/components/icons/cloudsBackgroundTop';
+import { IconPrinter } from '@/components/icons/iconPrinter';
 import Head from 'next/head';
 import Link from 'next/link';
 
-export default async function ResumePage() {
+export default function ResumePage() {
 	const jsonLd = {
 		'@context': 'https://schema.org',
 		'@type': 'Person',
@@ -39,9 +42,16 @@ export default async function ResumePage() {
 				<div className="print:text-text-light bg-bg-light dark:bg-bg-dark flex w-full flex-col items-center justify-center gap-6 px-8 pb-4 print:gap-2 print:bg-white print:p-0">
 					<h1
 						id="resume"
-						className="pt-32 text-6xl md:text-8xl print:pt-0 print:text-2xl"
+						className="flex items-center gap-8 pt-32 text-6xl md:text-8xl print:pt-0 print:text-2xl"
 					>
 						Resume
+						<button
+							className="flex h-12 w-12 cursor-pointer items-center justify-center print:hidden"
+							onClick={() => window.print()}
+							aria-label="Print Resume"
+						>
+							<IconPrinter />
+						</button>
 					</h1>
 					<section className="flex w-full flex-col gap-1 pb-3 md:w-1/2 md:items-center print:w-full print:items-baseline">
 						<h2 className="print:text-xl">Kieran Lawrence</h2>
