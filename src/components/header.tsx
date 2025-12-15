@@ -80,20 +80,11 @@ const NavItems = ({ onClick }: { onClick?: MouseEventHandler<HTMLAnchorElement> 
 			</li>
 			<li className="headNavItem">
 				<Link
-					href="/#resume"
+					href="/resume#resume"
 					className="active:text-bg-dark dark:active:text-bg-light flex h-full outline-0"
 					onClick={onClick}
 				>
 					Resume
-				</Link>
-			</li>
-			<li className="headNavItem">
-				<Link
-					href="/#education"
-					className="active:text-bg-dark dark:active:text-bg-light flex h-full outline-0"
-					onClick={onClick}
-				>
-					Education
 				</Link>
 			</li>
 			<li className="headNavItem">

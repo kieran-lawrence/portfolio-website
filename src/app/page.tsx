@@ -1,9 +1,7 @@
-import Education from '@/components/education';
 import CloudsBackgroundBottom from '@/components/icons/cloudsBackgroundBottom';
 import CloudsBackgroundTop from '@/components/icons/cloudsBackgroundTop';
 import Portfolio from '@/components/portfolio';
 import Portrait from '@/components/portrait';
-import Resume from '@/components/resume';
 
 export default function Home() {
 	const jsonLd = {
@@ -39,8 +37,6 @@ export default function Home() {
 			</div>
 			<CloudsBackgroundTop />
 			<div className="bg-bg-light dark:bg-bg-dark flex w-full flex-col gap-16 py-8">
-				<Resume />
-				<Education />
 				<Portfolio />
 			</div>
 			<CloudsBackgroundBottom />
