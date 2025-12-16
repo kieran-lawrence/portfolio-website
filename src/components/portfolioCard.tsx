@@ -39,7 +39,7 @@ export default function PortfolioCard({ cardTitle, cardDescription, skills }: Po
 					/>
 				</div>
 				<div className="flex h-[50%] flex-col items-center justify-center gap-4 px-4 text-justify">
-					<h4 className="text-2xl font-bold capitalize">{formattedTitle}</h4>
+					<h3 className="text-2xl font-bold capitalize">{formattedTitle}</h3>
 					<p className="text-lg break-keep">{cardDescription}</p>
 					<div className="w-full">
 						<ul className="flex flex-wrap justify-center gap-2 font-[500]">

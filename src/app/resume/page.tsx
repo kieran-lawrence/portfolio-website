@@ -39,25 +39,25 @@ export default function ResumePage() {
 					}}
 				/>
 				<CloudsBackgroundTop />
-				<div className="print:text-text-light bg-bg-light dark:bg-bg-dark flex w-full flex-col items-center justify-center gap-6 px-8 pb-4 print:gap-2 print:bg-white print:p-0">
+				<div className="print:text-text-light bg-bg-light dark:bg-bg-dark flex w-full flex-col items-center justify-center gap-6 px-8 pb-4 md:px-16 print:gap-2 print:bg-white print:p-0">
 					<h1
 						id="resume"
 						className="flex items-center gap-8 pt-32 text-6xl md:text-8xl print:pt-0 print:text-2xl"
 					>
 						Resume
 						<button
-							className="flex h-12 w-12 cursor-pointer items-center justify-center print:hidden"
+							className="hidden h-12 w-12 cursor-pointer items-center justify-center md:flex print:hidden"
 							onClick={() => window.print()}
 							aria-label="Print Resume"
 						>
 							<IconPrinter />
 						</button>
 					</h1>
-					<section className="flex w-full flex-col gap-1 pb-3 md:w-1/2 md:items-center print:w-full print:items-baseline">
+					<section className="flex w-full flex-col gap-1 pb-3 md:items-center lg:w-1/2 print:w-full print:items-baseline">
 						<h2 className="print:text-xl">Kieran Lawrence</h2>
-						<p className="text-xl font-semibold print:text-lg">
+						<h3 className="text-xl font-semibold print:text-lg">
 							Software Developer | Perth, WA
-						</p>
+						</h3>
 						<div className="flex flex-col gap-1 pt-2 md:items-center print:items-baseline">
 							<p className="font-semibold">
 								Email:&nbsp;
@@ -100,7 +100,7 @@ export default function ResumePage() {
 							</p>
 						</div>
 					</section>
-					<section className="flex w-full flex-col md:w-1/2 print:w-full">
+					<section className="flex w-full flex-col lg:w-1/2 print:w-full">
 						<h3 className="mb-1 border-t border-b py-1 text-xl font-semibold print:text-lg">
 							Professional Summary
 						</h3>
@@ -111,7 +111,7 @@ export default function ResumePage() {
 							mobile applications predominantly using NodeJS, React and React Native
 						</p>
 					</section>
-					<section className="flex w-full flex-col gap-1 md:w-1/2 print:mb-24 print:w-full">
+					<section className="flex w-full flex-col gap-1 lg:w-1/2 print:mb-24 print:w-full">
 						<h3 className="mb-1 border-t border-b py-1 text-xl font-semibold print:text-lg">
 							Professional Experience
 						</h3>
@@ -181,7 +181,7 @@ export default function ResumePage() {
 							</div>
 						</div>
 					</section>
-					<section className="flex w-full flex-col gap-1 md:w-1/2 print:w-full">
+					<section className="flex w-full flex-col gap-1 lg:w-1/2 print:w-full">
 						<h3 className="mb-1 border-t border-b py-1 text-xl font-semibold print:text-lg">
 							Education
 						</h3>
@@ -191,10 +191,10 @@ export default function ResumePage() {
 								<p>
 									I completed a Certificate IV in Programming, which sparked my
 									interest in software development, so I went on to complete this
-									Diploma to further my programming abilities with the goal of
-									kicking off my career in tech. My areas of focus included Web &
-									Mobile Application Development, Object-oriented programming and
-									Software Engineering Principles.
+									Diploma to further my software development abilities with the
+									goal of kicking off my career in tech. My areas of focus
+									included Web & Mobile Application Development, Object-oriented
+									programming and Software Engineering Principles.
 								</p>
 							</li>
 							<li className="mt-2">
@@ -209,7 +209,7 @@ export default function ResumePage() {
 							</li>
 						</ul>
 					</section>
-					<section className="flex w-full flex-col gap-1 md:w-1/2 print:w-full">
+					<section className="flex w-full flex-col gap-1 lg:w-1/2 print:w-full">
 						<h3 className="mb-1 border-t border-b py-1 text-xl font-semibold print:text-lg">
 							Technical Skills
 						</h3>
@@ -224,7 +224,8 @@ export default function ResumePage() {
 								Adept with a range of frameworks including Next.js, Expo and Svelte
 							</li>
 							<li>
-								Proficient at creating responsive and performant web applications
+								Proficient at creating responsive and performant web and mobile
+								applications
 							</li>
 						</ul>
 					</section>
