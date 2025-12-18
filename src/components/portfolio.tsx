@@ -7,7 +7,7 @@ export default async function Portfolio() {
 	return (
 		<div
 			id="portfolio"
-			className="flex w-full flex-col items-center justify-center gap-4 pt-32"
+			className="flex w-full flex-col items-center justify-center gap-4 pt-24 md:pt-32"
 		>
 			<h2>Portfolio</h2>
 			<ul className="portfolioGrid">
