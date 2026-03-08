@@ -81,7 +81,7 @@ const projectDescriptions: Record<string, string[]> = {
 		'Bulletin News is a full-stack news website project built to further my skills and knowledge while working in a media organisation. The front-end is built in Next.js and the backend using NestJS, with PostgreSQL as the database.',
 		'Key features of Bulletin include user authentication, article creation and management, and comment moderation. Users can register, create publishers, and submit articles through JSON payloads, I have started adding an admin panel to allow for these kinds of actions.',
 		'It also supports various article sections like text, headings, quotes, and images, allowing for rich content formatting like you would see on a news website.',
-		'Bulletin utilises the Nx monorepo architecture, organising the codebase into distinct applications and libraries. Testing is handled using Jest, and I set up ESLint and Prettier to maintain code quality.',
+		'Bulletin is built as a monorepo via Turborepo, organising the codebase into distinct applications and libraries. Testing is handled using Jest, and I set up ESLint and Prettier to maintain code quality.',
 		'While this project is still under development, it showcases a solid architectural foundation and a clear roadmap for future improvements, such as implementing a frontend interface for article creation.',
 	],
 	'improved-obsidian': [
@@ -92,7 +92,7 @@ const projectDescriptions: Record<string, string[]> = {
 	quill: [
 		"Quill is a full-stack real-time chat application I've been building to explore and implement modern, scalable web architecture. It’s inspired by platforms like Discord and Slack, aiming to support immersive group and private messaging experiences.",
 		'One of my goals with Quill was to implement WebSockets which is the primary way in which messages are delivered instantly across multiple clients.',
-		'So far, the backend supports features like user registration, authentication, and messaging logic with support for images as well as plain text messages. I’ve included a in-depth setup guide in the README to make deployment and local development as seamless as possible.',
+		'So far, the backend supports features like user registration, authentication, and messaging logic with support for images as well as plain text messages. I’ve included an in-depth setup guide in the README to make deployment and local development as seamless as possible.',
 	],
 	comments: [
 		'This project is an AWS-based serverless API, designed to manage comments for my news application, Bulletin. The API is built in a docker container hosted in ECS and deployed to Cloudfront to provide a scalable and efficient solution for handling user comments.',
