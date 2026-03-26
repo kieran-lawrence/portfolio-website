@@ -16,13 +16,13 @@ export default function PortfolioCard({ cardTitle, cardDescription, skills }: Po
 				href={
 					nonAccessibleTitles.includes(cardTitle)
 						? '#portfolio'
-						: `/portfolio/${cardTitle}#portfolio-title`
+						: `/portfolio/${cardTitle}`
 				}
 			>
 				<div
 					className={
 						formattedTitle.includes('bulletin')
-							? 'border-text-light dark:border-text-dark relative h-[50%] w-full border-b-2 sm:border-r-0 md:h-[100%] lg:border-r-2 lg:border-b-0'
+							? 'border-text-light dark:border-text-dark relative h-[50%] w-full border-b-2 sm:border-r-0 md:h-full lg:border-r-2 lg:border-b-0'
 							: 'border-text-light dark:border-text-dark relative h-[50%] w-full border-b-2'
 					}
 				>
@@ -35,14 +35,15 @@ export default function PortfolioCard({ cardTitle, cardDescription, skills }: Po
 						src={`/${cardTitle}.png`}
 						alt={formattedTitle}
 						fill={true}
-						sizes="(max-width: 768px) 100vw, 50vw"
+						sizes="100vw"
+						quality={100}
 					/>
 				</div>
 				<div className="flex h-[50%] flex-col items-center justify-center gap-4 px-4 text-justify">
 					<h3 className="text-2xl font-bold capitalize">{formattedTitle}</h3>
 					<p className="text-lg break-keep">{cardDescription}</p>
 					<div className="w-full">
-						<ul className="flex flex-wrap justify-center gap-2 font-[500]">
+						<ul className="flex flex-wrap justify-center gap-2 font-medium">
 							{skills.map((skill) => (
 								<li
 									className="bg-bg-light-alt dark:bg-clouds-two-dark-dark text-text-light rounded-2xl px-4 py-2 capitalize"
